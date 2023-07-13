@@ -1,5 +1,5 @@
 import { Client } from '../models/Client';
-import { Snowflake, Client as DiscordClient, ChatInputCommandInteraction, Message } from 'discord.js';
+import { Snowflake, Client as DiscordClient, ChatInputCommandInteraction, Message, ClientEvents, Awaitable } from 'discord.js';
 
 export interface GuildSchemaStructure {
     _id: Snowflake;
@@ -36,4 +36,9 @@ export interface CommandPayload<A extends boolean> {
     client: Client;
     interaction: A extends true ? ChatInputCommandInteraction : null;
     message: A extends true ? null : Message;
+}
+
+export interface ClientEvent<N extends keyof ClientEvents> {
+    name: N;
+    run: (...args: ClientEvents[N]) => Awaitable<void>;
 }

@@ -1,0 +1,25 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Base for all TypeScript projects",
+  "main": "index.ts",
+  "scripts": {
+    "dev": " tsx --project src/config/tsconfig.json src/index.ts",
+    "test": "tsx index.test.ts",
+    "lint:fix": "eslint src --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.43.0",
+    "mongoose": "^7.3.4",
+    "tiny-glob": "^0.2.9",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}

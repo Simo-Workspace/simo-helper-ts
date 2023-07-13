@@ -21,5 +21,8 @@
     "tiny-glob": "^0.2.9",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "env-smart": "^2.3.0"
   }
 }

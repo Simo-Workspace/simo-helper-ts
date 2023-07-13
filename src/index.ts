@@ -9,6 +9,6 @@ export const client: Client<boolean> = new Client<boolean>({
 
 loadEvents();
 loadCommands();
-load({ directory: 'src/config/.env' });
+load({ directory: 'src/config' });
 
 client.login(process.env.CLIENT_TOKEN);

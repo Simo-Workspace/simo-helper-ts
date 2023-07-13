@@ -1,7 +1,8 @@
 import { ClientCommand, CommandPayload } from '../../core/types/typings';
 
 export default {
-    name: /oi|ola/i,
+    name: 'ola',
+    aliases: ['oi'],
     async run({ message }: CommandPayload<false>) {
         return message.channel.send('tchau');
     }

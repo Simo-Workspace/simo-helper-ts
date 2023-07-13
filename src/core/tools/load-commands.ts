@@ -8,7 +8,7 @@ export const loadCommands: () => Promise<void> = async (): Promise<void> => {
     for (const path of paths) {
         const { default: command }: { default: ClientCommand | ClientApplicationCommand } = await import(`../../../${path}`);
 
-        if (command.name instanceof RegExp) return void client.commands.set(command.name, command as ClientCommand);
+        if ('aliases' in command) return void client.commands.set(command.name, command as ClientCommand);
 
         client.applicationCommands.set(command.name, command as ClientApplicationCommand);
     }

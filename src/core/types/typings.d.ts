@@ -1,4 +1,5 @@
-import { Snowflake } from 'discord.js';
+import { Client } from '../models/Client';
+import { Snowflake, Client as DiscordClient, ChatInputCommandInteraction, Message } from 'discord.js';
 
 export interface GuildSchemaStructure {
     _id: Snowflake;
@@ -14,4 +15,25 @@ export interface TagStructure {
 export enum TagType {
     Event,
     Function
+}
+
+export interface OverrideClient extends DiscordClient {
+    commands: Map<RegExp, ClientCommand>;
+    applicationCommands: Map<string, ClientApplicationCommand>;
+}
+
+export interface ClientCommand {
+    name: RegExp;
+    run: (payload: CommandPayload<false>) => Promise<unknown>;
+}
+
+export interface ClientApplicationCommand {
+    name: string;
+    run: (payload: CommandPayload<true>) => Promise<unknown>;
+}
+
+export interface CommandPayload<A extends boolean> {
+    client: Client;
+    interaction: A extends true ? ChatInputCommandInteraction : null;
+    message: A extends true ? null : Message;
 }

@@ -8,6 +8,9 @@ const guildSchema = new Schema<GuildSchemaStructure>({
     },
     tags: {
         type: Map, of: Object, default: new Map<Snowflake, TagStructure>()
+    },
+    prefix: {
+        type: String, default: 's!'
     }
 });
 

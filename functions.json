@@ -1,0 +1,3850 @@
+{
+    "awaited": [
+        {
+            "function": "$awaitCmdReactions",
+            "usage": "$awaitCmdReactions[userFilter;time;reactions;commands;errorMsg?;awaitData?]",
+            "description": "will respond when a user reacts to the initial command message with a specific emoji.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$awaitComponents",
+            "usage": "",
+            "description": "awaits components for given amount of uses.",
+            "example": "$awaitComponents[messageID;userFilter;customID;commands;errorMsg?;uses?;awaitData?]",
+            "version": "v6"
+        },
+        {
+            "function": "$awaitComponentsUntil",
+            "usage": "$awaitComponentsUntil[channelID;messageID;userFilter;time;customIDs;commands;errorMsg?;awaitData?]",
+            "description": "awaits message components until a specific time and makes in unuseable after that time.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$awaitMessageReactions",
+            "usage": "$awaitMessageReactions[channelID;messageID;userFilter;time;reactions;commands;errorMessage?;awaitData?]",
+            "description": "will reply when a user reacts with a specific emoji.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$awaitMessages",
+            "usage": "$awaitMessages[channelID;userFilter;time;replies;cmds;errorMessage?;awaitData?;dm?]",
+            "description": "will reply once a given message has been sent by the given user",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$componentCollector",
+            "usage": "$componentCollector[messageID;userFilter;time;customIDs;commands;errorMsg?;endcommand?;awaitData?]",
+            "description": "will create a collector for the given components.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteIn",
+            "usage": "$deleteIn[time]",
+            "description": "will delete a message after a given time.",
+            "example": "$deleteIn[5s]\nI'll delete this message in 5 seconds!",
+            "version": "v6"
+        },
+        {
+            "function": "$editIn",
+            "usage": "$editIn[time;content]",
+            "description": "will edit a message after a given time.",
+            "example": "  $editIn[5s;aoi.js is great, don't you agree?]\nI'll edit this message in 5 seconds!",
+            "version": "v6"
+        },
+        {
+            "function": "$reactionCollector",
+            "usage": "$reactionCollector[channelID;messageID;userFilters;time;reactions;awaitedCommands;removeReaction?;awaitData?;endAwait?]",
+            "description": "will create a reaction collector on a given message.",
+            "example": "",
+            "version": "v6"
+        }
+    ],
+    "calling": [
+        {
+            "function": "$addApplicationCommandPermissions",
+            "usage": "$addApplicationCommandPermissions[guildID/global?;id;...perms]",
+            "description": "add a applicationCommand permissions",
+            "example": "$addApplicationCommandPermissions[$guildID;ID;[{id: '$guildID', type:'ROLE', permission: false}]]",
+            "version": "v6"
+        },
+        {
+            "function": "$addButton",
+            "usage": "$addButton[index;label;style;customID;disabled?;emoji?]",
+            "description": "will add a button to the bot's message.",
+            "example": "Hello!\n$addButton[1;Example Button!;primary;exampleButton;false;💔]\n$addButton[1;Example Button!;link;https://discord.gg;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$addClientReactions",
+            "usage": "$addClientReactions[...reactions]",
+            "description": "will add a reaction to the bot's message.",
+            "example": "Hello!\n$addClientReactions[🧡;❤]",
+            "version": "v6"
+        },
+        {
+            "function": "$addCmdReactions",
+            "usage": "$addCmdReactions[...reactions]",
+            "description": "will react with given emojis to the author's message.",
+            "example": "Hello!\n$addCmdReactions[🧡;❤]",
+            "version": "v6"
+        },
+        {
+            "function": "$addEmoji",
+            "usage": "$addEmoji[guildID;url;name;returnEmoji?;reason?;...roles?]",
+            "description": "will add an emoji to the given guild. If role IDs are given, the emoji will only be usable by users with one of the provided role IDs.",
+            "example": "$addEmoji[$guildID;https://cdn.discordapp.com/emojis/1010320053687832586.webp?size=96&quality=lossless;leref;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$addField",
+            "usage": "$addField[fieldTitle;fieldDescription;inline?]",
+            "description": "will add a field in an embed.",
+            "example": "$addField[Example;Look at this!;false]\n$description[Hello!]",
+            "version": "v6"
+        },
+        {
+            "function": "$addMessageReactions",
+            "usage": "$addMessageReactions[channelID;messageID;...reactions]",
+            "description": "will add a reaction to a specific message.",
+            "example": "$addMessageReactions[$channelID;$messageID;✅;❌]",
+            "version": "v6"
+        },
+        {
+            "function": "$addSelectMenu",
+            "usage": "$addSelectMenu[index;customId;placeHolder;minValues;maxValues;disabled?;label:description:value:default?:emoji?;...]",
+            "description": "will add a select menu to the bot's message.",
+            "example": "https://aoi.js.org/docs/functions/Calling/addSelectMenu",
+            "version": "v6"
+        },
+        {
+            "function": "$addThreadMember",
+            "usage": "$addThreadMember[channelID;threadID;userID;reason]",
+            "description": "will add a member to a thread.",
+            "example": "  $addThreadMember[$channelID;$get[id];$randomUserID;testing]\n$let[id;$createThread[$channelID;example;1440;public;$messageID;true]] ",
+            "version": "v6"
+        },
+        {
+            "function": "$addTimestamp",
+            "usage": "$addTimestamp[ms?]",
+            "description": " will add a timestamp to an embed.",
+            "example": "  $description[Hello!]\n$addTimestamp",
+            "version": "v6"
+        },
+        {
+            "function": "$archiveThread",
+            "usage": "$archiveThread[threadID;channelID?;archive?;reason?]",
+            "description": "will archive or unarchive a specific thread.",
+            "example": "  $archiveThread[$channelID;$get[id];true;testing]\n$let[id;$createThread[$channelID;example;1440;public;$messageID;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$attachment",
+            "usage": "$attachment[attachment;name;type?]",
+            "description": "will create an attachment.",
+            "example": "$attachment[https://cdn.discordapp.com/emojis/1063432790697328710.webp?size=96&quality=lossless;boost-icon.png;url]",
+            "version": "v6"
+        },
+        {
+            "function": "$author",
+            "usage": "$author[index?;name;iconURL?]",
+            "description": "will add an author field to an embed.",
+            "example": "  $author[Hello!;$userAvatar[$authorID]]\n$description[Embed with author!]",
+            "version": "v6"
+        },
+        {
+            "function": "$autoCompleteRespond",
+            "usage": "$autoCompleteRespond[OptionName;OptionReply;...]",
+            "description": "s used to auto-complete slash options.",
+            "example": "https://aoi.js.org/docs/functions/Calling/autoCompleteRespond",
+            "version": "v6"
+        },
+        {
+            "function": "$ban",
+            "usage": "$ban[guildID?;userID;days?;reason?]",
+            "description": "will ban a user of a guild.",
+            "example": "$ban[$guildID;$randomUserID;7;Imagine getting banned.]",
+            "version": "v6"
+        },
+        {
+            "function": "$botLeave",
+            "usage": "$botLeave[guildID?]",
+            "description": "will make your bot leave a specific server.",
+            "example": "$botLeave[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$botTyping",
+            "usage": "$botTyping",
+            "description": "will make your bot type in a channel (show that it's typing).",
+            "example": "$botTyping",
+            "version": "v6"
+        },
+        {
+            "function": "$broadcastEval",
+            "usage": "$broadcastEval[func]",
+            "description": "will execute a code in all guilds of all shards. (requires sharding)",
+            "example": "$broadcastEval[$guildCount]",
+            "version": "v6"
+        },
+        {
+            "function": "$cacheMembers",
+            "usage": "$cacheMembers[guildID?;returnCount?]",
+            "description": "will cache all members of a guild.",
+            "example": "$cacheMembers[$guildID;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$changeNickname",
+            "usage": "$changeNickname[userID;nick;reason?]",
+            "description": "will change a nickname of a guild member.",
+            "example": "$changeNickname[$authorID;I love aoi.js;They simply love aoi.js]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelPermissionsFor",
+            "usage": "$channelPermissionsFor[userorroleID?;channelID?;sep?]",
+            "description": "will return the channel permissions of a specific user or role.",
+            "example": "$channelPermissionsFor[$authorID;$channelID;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelSendMessage",
+            "usage": "$channelSendMessage[channelID;message;returnID?]",
+            "description": "will send a message in a specific channel.",
+            "example": "$channelSendMessage[$channelID;Hello]\n$channelSendMessage[$channelID;{newEmbed:{title:Hello}{footer:Bye}};false]",
+            "version": "v6"
+        },
+        {
+            "function": "$clear",
+            "usage": "$clear[amount;filter?;returnCount?;channelID?]",
+            "description": "will delete the amount of given messages in a channel.",
+            "example": "$clear[50;unPins;false;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$clearReaction",
+            "usage": "$clearReaction[channelID;messageID;userID;emoji]",
+            "description": "will remove a given reaction of a message.",
+            "example": "$clearReaction[$channelID;$messageID;$clientID;🥱]",
+            "version": "v6"
+        },
+        {
+            "function": "$clearReactions",
+            "usage": "$clearReactions[channelID;messageID;emoji]",
+            "description": "will remove a given or all reactions of a message.",
+            "example": "$clearReactions[$channelID;$messageID;🥱]",
+            "version": "v6"
+        },
+        {
+            "function": "$cloneChannel",
+            "usage": "$cloneChannel[channelID;name;returnID?]",
+            "description": "will clone a channel.",
+            "example": "$cloneChannel[$channelID;new channel;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$color",
+            "usage": "$color[index?;hex]",
+            "description": "will change the color of an embed",
+            "example": "  $description[What a nice color!]\n$color[Red] or $color[ED4245]",
+            "version": "v6"
+        },
+        {
+            "function": "$createApplicationCommand",
+            "usage": "$createApplicationCommand[guildID/global;name;description;defaultPermission;type?;options?]",
+            "description": "will create an application command.",
+            "example": "$createApplicationCommand[$guildID/global;example;slash command description!;true;slash]",
+            "version": "v6"
+        },
+        {
+            "function": "$createChannelInvite",
+            "usage": "$createChannelInvite[channelID?;...options]",
+            "description": "will create a channel invite.",
+            "example": "$createChannelInvite[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$createFile",
+            "usage": "$createFile[attachment;name]",
+            "description": "will create a file.",
+            "example": "$createFile[This is an example!;example.txt]",
+            "version": "v6"
+        },
+        {
+            "function": "$createScheduledEvent",
+            "usage": "$createScheduledEvent[channelID;name;description;starTime;endTime?;entityType?;entityMetadata?;image?;reason?]",
+            "description": "will create a scheduled event.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$createStageInstance",
+            "usage": "$createStageInstance[channelID;topic;type?]",
+            "description": "will start a stage.",
+            "example": "$createStageInstance[stageID;Testing!;1]",
+            "version": "v6"
+        },
+        {
+            "function": "$createSticker",
+            "usage": "$createSticker[guildid;url;name;returnSticker?;tags;description;reason]",
+            "description": "will create a sticker.",
+            "example": "$createSticker[$guildID;https://cdn.discordapp.com/attachments/1061712111052521493/1066397675278323734/692445926480150611.png;Imagine;true;money;Random sticker;Testing.]",
+            "version": "v6"
+        },
+        {
+            "function": "$createThread",
+            "usage": "$createThread[channelID;name;archive;type;startMessage;returnId?]",
+            "description": "will create a new thread.",
+            "example": "$createThread[$channelID;Example!;60;public;$messageID;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$createWebhook",
+            "usage": "$createWebhook[channelID;name;avatar;reason;separator?]",
+            "description": "will create a webhook.",
+            "example": "$createWebhook[$channelID;aoi.js is great;$userAvatar[$authorID];Just testing.;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$deafenUser",
+            "usage": "$deafenUser[userID;deaf?]",
+            "description": "will deafen a user.",
+            "example": "$deafen[$authorID;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteApplicationCommand",
+            "usage": "$deleteApplicationCommand[guildID/global;id]",
+            "description": "will delete an application command.",
+            "example": "$deleteApplicationCommand[$guildID;$getApplicationCommandID[$guildID;slashcommandname]]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteChannel",
+            "usage": "$deleteChannel[channelID]",
+            "description": "will delete a specific channel.",
+            "example": "$deleteChannel[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteChannels",
+            "usage": "$deleteChannels[...channels]",
+            "description": "will delete multiple channels.",
+            "example": "$deleteChannels[channelID1;channelID2;channelID3;channelID4]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteCommand",
+            "usage": "$deleteCommand",
+            "description": "will delete the initial command message.",
+            "example": "$deleteCommand",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteEmoji",
+            "usage": "$deleteEmoji[emoji]",
+            "description": "will delete a specific emoji.",
+            "example": "$deleteEmoji[$randomEmoji]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteEmojis",
+            "usage": "$deleteEmojis[...emojis]",
+            "description": "will delete multiple emoji.",
+            "example": "$deleteEmojis[$randomEmoji;$randomEmoji]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteInvite",
+            "usage": "$deleteInvite[guildID;inviteCode;reason?]",
+            "description": "will delete a specific guild invite.",
+            "example": "$deleteInvite[$guildID;ifawd9a;Testing!]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteMessage",
+            "usage": "$deleteMessage[messageID;channelID]",
+            "description": "will delete a specific message.",
+            "example": "$deleteMessage[$get[id];$channelID]\n$let[id;$sendMessage[Hello!;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteRoles",
+            "usage": "$deleteRoles[guildID;...roles]",
+            "description": "will delete one or multiple roles.",
+            "example": "$deleteRoles[$guildID;roleID1;roleID2;roleID3]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteStageInstance",
+            "usage": "$deleteStageInstance[channelID]",
+            "description": "will end an existing stage instance.",
+            "example": "$deleteStageInstance[stageInstance]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteSticker",
+            "usage": "$deleteSticker[guildID;sticker]",
+            "description": "will delete a given sticker.",
+            "example": "$deleteSticker[$guildID;sticker]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteThread",
+            "usage": "$deleteThread[channelID;threadID;reason?]",
+            "description": "will delete a thread of a channel.",
+            "example": "$deleteThread[$channelID;threadID;Crazy Example.]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteWebhook",
+            "usage": "$deleteWebhook[webhookID;webhookToken]",
+            "description": " will delete a Webhook.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$description",
+            "usage": "$description[index?;description]",
+            "description": "is used for embeds to add an description field.",
+            "example": "$description[aoi.js is great!]",
+            "version": "v6"
+        },
+        {
+            "function": "$dm",
+            "usage": "$dm[userID]",
+            "description": "will send a message to an users Direct Messages.",
+            "example": "Hello! Did you really think this works?\n$dm[$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$editChannel",
+            "usage": "$editChannel[channelID;name?;type?;position?;topic?;nsfw?;bitrate?;userlimit?;parent?;lockPermissions?;permissionOverwrites?;rateLimitPerUser?;defaultAutoArchiveDuration?;rtcRegion?;reason?]",
+            "description": "will edit a channel.",
+            "example": "$editChannel[$channelID;I love aoi.js;$default;1]",
+            "version": "v6"
+        },
+        {
+            "function": "$editMessage",
+            "usage": "$editMessage[messageID;msg;channelID?]",
+            "description": "will edit a given message.",
+            "example": "$editMessage[$get[id];Bye!]\n$wait[5s]\n$let[id;$sendMessage[Hello!;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$editWebhookMessage",
+            "usage": "$editWebhookMessage[webhookID;webhookToken;messageID;returnID?]",
+            "description": "will edit a given webhook message.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$fetchActiveThreads",
+            "usage": "$fetchActiveThreads[channelID;option?]",
+            "description": "will return all active threads of a given channel.",
+            "example": "$fetchActiveThreads[$channelID;name]",
+            "version": "v6"
+        },
+        {
+            "function": "$fetchArchivedThreads",
+            "usage": "$fetchArchivedThreads[channelID;option?]",
+            "description": "will return all archived threads of a given channel.",
+            "example": "$fetchArchivedThreads[$channelID;name]",
+            "version": "v6"
+        },
+        {
+            "function": "$fetchClientValues",
+            "usage": "$fetchClientValues[func]",
+            "description": "will return data of all client shards.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$footer",
+            "usage": "$footer[index?;text;iconURL?]",
+            "description": "will add a footer to an embed.",
+            "example": "$title[Hello!]\n$footer[Hello again!;$userAvatar]",
+            "version": "v6"
+        },
+        {
+            "function": "$getGuildInvite",
+            "usage": "$getGuildInvite[guildID?;...options]",
+            "description": "will create a guild invite.",
+            "example": "$getGuildInvite[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$giveRole",
+            "usage": "$giveRole[guildID;userID;roleID]",
+            "description": "will give an specific user a specific role.",
+            "example": "$giveRole[$guildID;$authorID;$findRole[Admin]]",
+            "version": "v6"
+        },
+        {
+            "function": "$giveRoles",
+            "usage": "$giveRoles[guildID;userID;...roles]",
+            "description": "will give an specific user multiple or one specific role(s).",
+            "example": "$giveRoles[$guildID;$authorID;$findRole[Admin];$findRole[Moderator]]",
+            "version": "v6"
+        },
+        {
+            "function": "$image",
+            "usage": "$image[index?;url]",
+            "description": "will add an image to an embed.",
+            "example": "$image[$userAvatar]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionModal",
+            "usage": "$interactionModal[title;customID;components]",
+            "description": "create an user interactive modal.",
+            "example": "https://aoi.js.org/docs/functions/Calling/interactionModal",
+            "version": "v6"
+        },
+        {
+            "function": "$isAutoComplete",
+            "usage": "$isAutoComplete",
+            "description": "will return either true or false depending on the entered slash command option being auto completed or not. (autoCompleteRespond function)",
+            "example": "https://aoi.js.org/docs/functions/Calling/isAutoComplete",
+            "version": "v6"
+        },
+        {
+            "function": "$joinThread",
+            "usage": "$joinThread[channelID;threadID]",
+            "description": "will make the bot join a specific thread.",
+            "example": "$joinThread[$channelID;$get[threadID]]\n$let[threadID;$createThread[$channelID;Example!;1440;public;$messageID;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$kick",
+            "usage": "$kick[userID;guildID?;reason?]",
+            "description": "will remove a user from a given guild.",
+            "example": "  <@$findMember[$message;false]> has been kicked!\n$kick[$findMember[$message;false];$guildID;Example reason!]",
+            "version": "v6"
+        },
+        {
+            "function": "$killShard",
+            "usage": "$killShard[shardID]",
+            "description": "will kill a given shard. (requires sharding)",
+            "example": "$killShard[$shardID]",
+            "version": "v6"
+        },
+        {
+            "function": "$leaveThread",
+            "usage": "$leaveThread[channelID;threadID]",
+            "description": "will make the bot leave a specific thread.",
+            "example": "$leaveThread[$channelID;$get[threadID]]\n$let[threadID;$createThread[$channelID;Example!;1440;public;$messageID;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$messagePublish",
+            "usage": "$messagePublish[messageID;channelID?]",
+            "description": "will publish a message in an announcement channel.",
+            "example": "$messagePublish[$get[msgID];$channelID]\n$let[msgID;$sendMessage[Hello!;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$modifyApplicationCommand",
+            "usage": "$modifyApplicationCommand[guildID/global;appID;name:description:type:options:defaultPermission;...options]",
+            "description": "will modify an existing application command.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$modifyChannelPerms",
+            "usage": "$modifyChannelPerms[roruId;channelID;...perms]",
+            "description": "will modify a given channel's permission overrides.",
+            "example": "$modifyChannelPerms[$guildID;$channelID;+sendmessages;+addreactions]",
+            "version": "v6"
+        },
+        {
+            "function": "$modifyEmoji",
+            "usage": "$modifyEmoji[guildID;emojiID;name;...roles?]",
+            "description": "will modify a given custom emoji.",
+            "example": "$modifyEmoji[$guildID;emojiID;Example]",
+            "version": "v6"
+        },
+        {
+            "function": "$modifyRole",
+            "usage": "$modifyRole[guildID;roleID;...data]",
+            "description": "will modify a given role.",
+            "example": "$modifyRole[$guildID;roleID;{\"name\": \"Awesome!\"}]",
+            "version": "v6"
+        },
+        {
+            "function": "$modifyRolePerms",
+            "usage": "$modifyRolePerms[guildID;roleID;...perms]",
+            "description": "will modify a given role's permissions.",
+            "example": "$modifyRolePerms[$guildID;$guildID;+sendmessages;+addreactions]",
+            "version": "v6"
+        },
+        {
+            "function": "$modifyWebhook",
+            "usage": "$modifyWebhook[webhookID;name;avatar;channelID?;reason?]",
+            "description": "will modify a given webhook.",
+            "example": "$modifyWebhook[webhookID;Hello!;$userAvatar[$authorID];$channelID;Testing!]",
+            "version": "v6"
+        },
+        {
+            "function": "$moveUser",
+            "usage": "$moveUser[guildID;userID;channelID;reason?]",
+            "description": "will move a given user between two Voice Channels.",
+            "example": "$moveUser[$guildID;userID;new voice channel ID;Testing!]",
+            "version": "v6"
+        },
+        {
+            "function": "$muteUser",
+            "usage": "$muteUser[guildID;userID;mute?;reason?]",
+            "description": "will mute or unmute a given user in a Voice Channel.",
+            "example": "$muteUser[$guildID;$authorID;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$pinMessage",
+            "usage": "$pinMessage[messageID?;channelID?]",
+            "description": "will pin a given message.",
+            "example": "$pinMessage[$get[id]]\n$let[id;$sendMessage[Hello!;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$pruneMembers",
+            "usage": "$pruneMembers[days?;guildID?;roleIds?;dry?;reason?;count?]",
+            "description": "will kick all inactive users whose been inactive for a given amount of time.",
+            "example": "$pruneMembers[4;$guildID;$guildID;true;Pruning!;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$removeApplicationCommandPermissions",
+            "usage": "$removeApplicationCommandPermissions[guildID/global;id;roruids]",
+            "description": "will remove permissions of a user or role of a specific application command.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$removeThreadMember",
+            "usage": "$removeThreadMember[channelID;threadID;userID;reason?]",
+            "description": "will remove a given thread member from a given thread.",
+            "example": "$removeThreadMember[$channelID;threadID;$authorID;Testing functions!]",
+            "version": "v6"
+        },
+        {
+            "function": "$reply",
+            "usage": "$reply[messageID?;mentionUser?]",
+            "description": "will reply to a given message.",
+            "example": "$reply[$messageID;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$respawnAllShards",
+            "usage": "$respawnAllShards",
+            "description": "will respawn all shards. (requires sharding)",
+            "example": "$respawnAllShards",
+            "version": "v6"
+        },
+        {
+            "function": "$sendCrosspostingMessage",
+            "usage": "$sendCrosspostingMessage[message;...channelIDs]",
+            "description": "will crosspost a given message to the given channels.",
+            "example": "$sendCrosspostingMessage[Hello!;$channelID;$randomChannelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$sendDm",
+            "usage": "$sendDm[message;userID?;returnID?]",
+            "description": "will Direct Message a given user.",
+            "example": "$sendDm[Hello!;$authorID;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$sendMessage",
+            "usage": "$sendMessage[message;returnID?]",
+            "description": "will send a message in the execution channel.",
+            "example": "$sendMessage[Hello!;false]\n$sendMessage[Hello! {newEmbed:{title:Bonjour!}};false]",
+            "version": "v6"
+        },
+        {
+            "function": "$sendTTS",
+            "usage": "$sendTTS[channelID;message;returnID?]",
+            "description": "will send a text-to-speech message in a given channel.",
+            "example": "$sendTTS[$channelIDHello!;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$sendWebhookMessage",
+            "usage": "$sendWebhookMessage[webhookID;webhookToken;message;returnID?]",
+            "description": "will send a message using an existing webhook.",
+            "example": "$sendWebhookMessage[$splitText[1];$splitText[2];Hello!;false]\n$textSplit[$createWebhook[$channelID;$username;$userAvatar;Testing!;,];,]",
+            "version": "v6"
+        },
+        {
+            "function": "$setApplicationCommandPermissions",
+            "usage": "$setApplicationCommandPermissions[guildID/global;ID;...perms]",
+            "description": "will set the permissions of a specific application command.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$setChannelTopic",
+            "usage": "$setChannelTopic[channelID;topic]",
+            "description": "will modify a channel's topic.",
+            "example": "$setChannelTopic[$channelID;Hello! This is the new channel topic!]",
+            "version": "v6"
+        },
+        {
+            "function": "$setClientAvatar",
+            "usage": "$setClientAvatar[avatar]",
+            "description": "will change the clients' avatar.",
+            "example": "$setClientAvatar[$userAvatar[$authorID]]",
+            "version": "v6"
+        },
+        {
+            "function": "$setClientName",
+            "usage": "$setClientName[username]",
+            "description": "will change the clients' Discord Username.",
+            "example": "$setClientName[$username[$authorID]]",
+            "version": "v6"
+        },
+        {
+            "function": "$setGuildIcon",
+            "usage": "$setGuildIcon[icon;guildID?]",
+            "description": "will change a guilds' icon.",
+            "example": "$setGuildIcon[$userAvatar[$authorID];$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$setGuildName",
+            "usage": "$setGuildName[name;guildID?]",
+            "description": "will change a guilds' name.",
+            "example": "$setGuildName[$username[$authorID];$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$setRoleColor",
+            "usage": "$setRoleColor[roleID;color]",
+            "description": "will set a roles' color.",
+            "example": "$setRoleColor[$randomRoleID;ED4245]\n or\n$setRoleColor[$randomRoleID;Red] ",
+            "version": "v6"
+        },
+        {
+            "function": "$setRolePosition",
+            "usage": "$setRolePosition[roleID;position;guildID?]",
+            "description": "will set a roles' position.",
+            "example": "$setRolePosition[$randomRoleID;1;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$setRoles",
+            "usage": "$setRoles[guildID;memberID;...roleIDs]",
+            "description": "will set a member's roles.",
+            "example": "$setRoles[$guildID;$authorID;roleID1;roleID2;roleID3;....]",
+            "version": "v6"
+        },
+        {
+            "function": "$setStatus",
+            "usage": "$setStatus[name;type;status;url;afk?]",
+            "description": "will change the client's status.",
+            "example": "$setStatus[Hello!;PLAYING;online]",
+            "version": "v6"
+        },
+        {
+            "function": "$slowmode",
+            "usage": "$slowmode[time;channelID?]",
+            "description": "will change a channel's slowmode.",
+            "example": "$slowmode[3m;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$spawnShard",
+            "usage": "$spawnShard[shard]",
+            "description": "will spawn a shard, requires sharding.",
+            "example": "$spawnShard[1]",
+            "version": "v6"
+        },
+        {
+            "function": "$takeRole",
+            "usage": "$takeRole[guildID;userID;roleID]",
+            "description": "will remove a given role from a given member.",
+            "example": "$takeRole[$guildID;$authorID;roleID]",
+            "version": "v6"
+        },
+        {
+            "function": "$takeRoles",
+            "usage": "$takeRoles[guildID;userID;...roleIDs]",
+            "description": "will remove one or multiple roles from a given member.",
+            "example": "$takeRoles[$guildID;$authorID;roleID;roleID;...]",
+            "version": "v6"
+        },
+        {
+            "function": "$thumbnail",
+            "usage": "$thumbnail[index?;url]",
+            "description": "add a thumbnail to an embed (upper right corner image).",
+            "example": "$thumbnail[$userAvatar[$authorID]]\n$description[Hello, that's your Avatar!]",
+            "version": "v6"
+        },
+        {
+            "function": "$timeoutMember",
+            "usage": "$timeoutMember[guildID;memberID;timer;timeoutEndsAt?;reason?]",
+            "description": "will timeout a given member using Discord's Timeout feature.",
+            "example": "$timeoutMember[$guildID;userID;5m;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$title",
+            "usage": "$title[index?;title;url?]",
+            "description": "add a title to an embed.",
+            "example": "$title[Hello!;https://aoi.js.org]\n$description[The title contains a hyperlink..]",
+            "version": "v6"
+        },
+        {
+            "function": "$unPinMessage",
+            "usage": "$unPinMessage[messageID?;channelID?]",
+            "description": "will unpin a given message.",
+            "example": "$unPinMessage[$get[id]]\n$wait[2s]\n$pinMessage[$get[id]]\n$let[id;$sendMessage[Hello!;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$unban",
+            "usage": "$unban[guildID;userID]",
+            "description": "will unban a given user.",
+            "example": "$unban[$guildID;userID]",
+            "version": "v6"
+        }
+    ],
+    "events": [
+        {
+            "function": "$bulk",
+            "usage": "$bulk[option]",
+            "description": "will hold data for the bulk delete command. (messageDeleteBulk callback)",
+            "example": "$bulk[messages]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelUsed",
+            "usage": "$channelUsed",
+            "description": "will return the channel ID of where the callback was triggered.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$handleError",
+            "usage": "$handleError[option]",
+            "description": "will return information about an occured error.",
+            "example": "Something went wrong in your \"$handleError[command]\" command! The function \"$handleError[function]\" returned the error \"$handleError[error]\"",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionData",
+            "usage": "$interactionData[data]",
+            "description": "will return given arguments of an interaction.",
+            "example": "$interactionData[message.id]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionDefer",
+            "usage": "$interactionDefer[ephemeral]",
+            "description": "defers an Interaction of the last 15 minutes.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionDeferUpdate",
+            "usage": "$interactionDeferUpdate[ephemeral]",
+            "description": "defers the interaction message that will be updated.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionDelete",
+            "usage": "$interactionDelete",
+            "description": "will delete a reply of an interaction.",
+            "example": "$interactionDelete\n$wait[5s]\n$interactionReply[Hello, World!;;;;everyone;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionEdit",
+            "usage": "$interactionEdit[content?;embeds?;components?;files?;allowedMentions?]",
+            "description": "will return edit an interaction.",
+            "example": "$interactionEdit[Bye, World!;;;;everyone]\n$wait[5s]\n$interactionReply[Hello, World!;;;;everyone;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionFollowUp",
+            "usage": "$interactionFollowUp[content?;embeds?;components?;files?;ephemeral?]",
+            "description": "can be used for JSON requests, song informations or playing tracks, since these things takes more than 3 seconds.",
+            "example": "  $interactionFollowUp[Bye, world!]\n$interactionDefer[true]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionReply",
+            "usage": "$interactionReply[content?;embeds?;components?;files?;allowedMentions?;ephemeral?]",
+            "description": "allows you to send an interaction message reply.",
+            "example": "$interactionReply[Hello, world!;;;;everyone;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionUpdate",
+            "usage": "$interactionUpdate[content?;embeds?;components?;files?]",
+            "description": "will return edit an interaction.",
+            "example": "$interactionUpdate[Bye, World!]\n$wait[5s]\n$interactionReply[Hello, World!;;;;everyone;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$isButtonInteraction",
+            "usage": "$isButtonInteraction",
+            "description": "will return either true or false depending on the type of interaction.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$isCommandInteraction",
+            "usage": "$isCommandInteraction",
+            "description": "will return either true or false depending on the type of interaction.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$isComponentInteraction",
+            "usage": "$isComponentInteraction",
+            "description": "will return either true or false depending on the type of interaction.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$isContextMenuInteraction",
+            "usage": "$isContextMenuInteraction",
+            "description": "will return either true or false depending on the type of interaction.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$isSelectMenuInteraction",
+            "usage": "$isSelectMenuInteraction",
+            "description": "will return either true or false depending on the type of interaction.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newApplicationCmd",
+            "usage": "$newApplicationCmd[name]",
+            "description": "gets the data from application Callbacks (update and create one).",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newChannel",
+            "usage": "$newChannel[option]",
+            "description": "holds data of the updated channel, used in channel update, delete and create callbacks, or else any data will be empty.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newGuild",
+            "usage": "$newGuild[option]",
+            "description": "holds data for the guild after the update, might be a good idea to check partial option before accessing any property. (guildUpdate callback)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newMember",
+            "usage": "$newMember[option]",
+            "description": "holds data for the member after the update, might be a good idea to check partial option before accessing any property. (memberUpdate callback)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newPresence",
+            "usage": "$newPresence[option]",
+            "description": "holds data of the updated presence.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newRole",
+            "usage": "$newRole[option]",
+            "description": "holds data of a role that was created, updated, or deleted. Used in role update / delete / create callbacks, or else it won't give any data.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newState",
+            "usage": "$newState[option]",
+            "description": "holds data for the user voice state after the update (voiceStateUpdate callback).",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newUser",
+            "usage": "$newUser[option]",
+            "description": "holds data of the updated user.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$newVariable",
+            "usage": "$newVariable[option;sep?]",
+            "description": "gets the data from variable callbacks.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldApplicationCmd",
+            "usage": "$oldApplicationCmd[option]",
+            "description": "gets the data from application Callbacks (update and delete one)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldChannel",
+            "usage": "$oldChannel[option]",
+            "description": "holds data of the channel before it was updated, used in channel update callback, or else any data will be empty",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldEmoji",
+            "usage": "$oldEmoji[option]",
+            "description": "holds data for the emoji before it was updated/ deleted. (emojiUpdate and emojiDelete callback)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldGuild",
+            "usage": "$oldGuild[option]",
+            "description": "holds data for the guild before it was updated, this is from discord cache and might be empty depending on whether it's cached, so use partial option before attempting to access any property. (guildUpdate callback)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldMember",
+            "usage": "$oldMember[option]",
+            "description": "holds data for the member before it was updated, this is from discord cache and might be empty depending on whether it's cached, so use partial option before attempting to access any property. (memberUpdate callback)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldMessage",
+            "usage": "$oldMessage[option]",
+            "description": "holds the content of the message before it was updated. (if any)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldMsgData",
+            "usage": "$oldMsgData[option]",
+            "description": "holds data of the old message.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldPresence",
+            "usage": "$oldPresence[option]",
+            "description": "holds old data of the user's presence, used in update presence callback, or else any data will be empty",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldRole",
+            "usage": "$oldRole[option]",
+            "description": "holds data of the role before it was updated, used in role update callback, or else any data will be empty.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldState",
+            "usage": "$oldState[option]",
+            "description": " holds data for the user voice state before it was updated (voiceStateUpdate callback).",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldUser",
+            "usage": "$oldUser[option]",
+            "description": "holds data of the old user, used in update user callback, or else any data will be empty.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$oldVariable",
+            "usage": "$oldVariable[option;sep?]",
+            "description": "gets the data from variable Callbacks (update and delete one)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$pinsUpdate",
+            "usage": "$pinsUpdate[option]",
+            "description": "holds data for the channel the channel pins were updated in. (channelPinsUpdate callback)",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$reactionData",
+            "usage": "$reactionData[option]",
+            "description": "holds data of a reaction.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$shard",
+            "usage": "$shard[option]",
+            "description": "returns the shard ID.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$slashOption",
+            "usage": "$slashOption[option]",
+            "description": "returns data of a slash command option.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$textInputValue",
+            "usage": "$textInputValue[option]",
+            "description": "returns data of a context menu option.",
+            "example": "https://aoi.js.org/docs/functions/Events/textInputValue",
+            "version": "v6"
+        },
+        {
+            "function": "$timeoutData",
+            "usage": "$timeoutData[option]",
+            "description": "holds data for $setTimeout data parameters, this will be empty if used outside timeoutCommand codes.",
+            "example": "https://aoi.js.org/docs/functions/Events/timeoutData",
+            "version": "v6"
+        },
+        {
+            "function": "$webhookUpdate",
+            "usage": "$webhookUpdate[option]",
+            "description": "channel the webhook was updated in. (webhookUpdate callback)",
+            "example": "",
+            "version": "v6"
+        }
+    ],
+    "info": [
+        {
+            "function": "$allChannelsCount",
+            "usage": "$allChannelsCount[type?]",
+            "description": "will return the amount of all cached channels of a given type.",
+            "example": "$allChannelsCount[Voice]",
+            "version": "v6"
+        },
+        {
+            "function": "$allEmojisCount",
+            "usage": "$allEmojisCount[type?]",
+            "description": "will return the amount of emojis of a given type.",
+            "example": "$allEmojisCount",
+            "version": "v6"
+        },
+        {
+            "function": "$allMembersCount",
+            "usage": "$allMembersCount",
+            "description": "will return the amount of members in your guild.",
+            "example": "$allMembersCount",
+            "version": "v6"
+        },
+        {
+            "function": "$authorID",
+            "usage": "$authorID",
+            "description": "will return user ID of who executed the command.",
+            "example": "$authorID",
+            "version": "v6"
+        },
+        {
+            "function": "$banCount",
+            "usage": "$banCount[guildID?]",
+            "description": "will return the amount of banned users of a specific guild.",
+            "example": "$banCount[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$boostingSince",
+            "usage": "$boostingSince[guildID?;userID?;format?]",
+            "description": "will return the starting date of someone boosting a specific guild.",
+            "example": "$boostingSince[$guildID;$authorID;date]",
+            "version": "v6"
+        },
+        {
+            "function": "$botCount",
+            "usage": "$botCount[guildID?]",
+            "description": "will return the amount of Bots in your guild.",
+            "example": "$botCount[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$botOwnerID",
+            "usage": "$botOwnerID[seperator?]",
+            "description": "will return the user IDs of the bot owner (or of multiple people if you have a team).",
+            "example": "$botOwnerID",
+            "version": "v6"
+        },
+        {
+            "function": "$categoryChannels",
+            "usage": "$categoryChannels[categoryID;option?;sep?]",
+            "description": "will return all channels of a given category.",
+            "example": "$categoryChannels[$channelCategoryID;names;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelCategoryID",
+            "usage": "$channelCategoryID[channelID?]",
+            "description": "will return the parent of a specific channel.",
+            "example": "$channelCategoryID[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$allChannelsCount",
+            "usage": "$allChannelsCount[type?]",
+            "description": "will return the amount of all cached channels of a given type.",
+            "example": "$allChannelsCount[Voice]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelID",
+            "usage": "$channelID[name?]",
+            "description": "will return the channel ID of the given channel name.",
+            "example": "$channelID",
+            "version": "v6"
+        },
+        {
+            "function": "$channelNSFW",
+            "usage": "$channelNSFW[channelID?]",
+            "description": "will return true or false depending if the given channel is marked as NSFW or not.",
+            "example": "$channelNSFW[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelName",
+            "usage": "$channelName[channelID?]",
+            "description": "will return the channel name of the given channel.",
+            "example": "$channelName[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelOverwrites",
+            "usage": "$channelOverwrites[channelID?;response?;sep?]",
+            "description": "will return the given channel's overwrites.",
+            "example": "$channelOverwrites[$channelID;{mention} {type} {allow} {deny};, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelTopic",
+            "usage": "$channelTopic[channelID?]",
+            "description": "will return the given channel's topic.",
+            "example": "$channelTopic[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelType",
+            "usage": "$channelType[channelID?]",
+            "description": "will return the given channel's type.",
+            "example": "$channelType[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$clientID",
+            "usage": "$clientID",
+            "description": "will return the client's Discord User ID.",
+            "example": "$clientID",
+            "version": "v6"
+        },
+        {
+            "function": "$clientToken",
+            "usage": "$clientToken",
+            "description": "will return the client's token.",
+            "example": "$clientToken",
+            "version": "v6"
+        },
+        {
+            "function": "$commandCode",
+            "usage": "$commandCode",
+            "description": "will return the commands' code.",
+            "example": "$commandCode",
+            "version": "v6"
+        },
+        {
+            "function": "$commandName",
+            "usage": "$commandName",
+            "description": "will return the commands' name.",
+            "example": "$commandName",
+            "version": "v6"
+        },
+        {
+            "function": "$commandsCount",
+            "usage": "$commandsCount",
+            "description": "will return the amount of commands.",
+            "example": "$commandsCount",
+            "version": "v6"
+        },
+        {
+            "function": "$cpu",
+            "usage": "$cpu[option?]",
+            "description": "will return CPU usage of a process or the OS.",
+            "example": "OS: $cpu[os]\nProcess: $cpu[process]",
+            "version": "v6"
+        },
+        {
+            "function": "$customEmoji",
+            "usage": "$customEmoji[emoji;id?]",
+            "description": "will return a custom emoji.",
+            "example": "$customEmoji[emojiname]",
+            "version": "v6"
+        },
+        {
+            "function": "$databasePing",
+            "usage": "$databasePing",
+            "description": "will return your database ping.",
+            "example": "My database ping is: $databasePing MS!",
+            "version": "v6"
+        },
+        {
+            "function": "$date",
+            "usage": "$date",
+            "description": "will return the day of the month.",
+            "example": "$date",
+            "version": "v6"
+        },
+        {
+            "function": "$datestamp",
+            "usage": "$datestamp",
+            "description": "will return the day in MS.",
+            "example": "$humanizeMS[$datestamp]",
+            "version": "v6"
+        },
+        {
+            "function": "$day",
+            "usage": "$day",
+            "description": "will return the day of the month.",
+            "example": "Today is: $day",
+            "version": "v6"
+        },
+        {
+            "function": "$discriminator",
+            "usage": "$discriminator[userId?]",
+            "description": "will return a user's discriminator.",
+            "example": "$discriminator[$authorID]\n$discriminator[$clientID]",
+            "version": "v6"
+        },
+        {
+            "function": "$emojiCount",
+            "usage": "$emojiCount[guildID?]",
+            "description": "will return the emoji count of a guild.",
+            "example": "You have $emojiCount emojis in your guild!",
+            "version": "v6"
+        },
+        {
+            "function": "$getAttachment",
+            "usage": "$getAttachment[channelID;messageID;index?;option?]",
+            "description": "will return the properties of an attachment.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$getAuditLogs",
+            "usage": "$getAuditLogs[limit?;userID?;action?;guildID?;format?]",
+            "description": "will retrieve guild audit logs according to the given arguments.",
+            "example": "$getAuditLogs[5;$authorID;All;$guildID;{executor.username}: {target.id} - {action}]",
+            "version": "v6"
+        },
+        {
+            "function": "$getBanReason",
+            "usage": "$getBanReason[guildID?;userID?]",
+            "description": "will return a ban reason of an specific user.",
+            "example": "$getBanReason[$guildID;userID]",
+            "version": "v6"
+        },
+        {
+            "function": "$getBotInvite",
+            "usage": "$getBotInvite[...perms?]",
+            "description": "will return your bot's invite with specified permissions.",
+            "example": "Invite me here: $getBotInvite[administrator]",
+            "version": "v6"
+        },
+        {
+            "function": "$getChannelSlowmode",
+            "usage": "$getChannelSlowmode[channelID?]",
+            "description": "will return a channel's slowmode in seconds.",
+            "example": "The current channel slowmode is: $getChannelSlowmode[$channelID] seconds!",
+            "version": "v6"
+        },
+        {
+            "function": "$getEmbed",
+            "usage": "$getEmbed[channelID?;messageID?;index?;option?]",
+            "description": "will return properties about an given embed.",
+            "example": "$getEmbed[$channelID;messageID;1;description]",
+            "version": "v6"
+        },
+        {
+            "function": "$getMessage",
+            "usage": "$getMessage[channelID;messageID;option?]",
+            "description": "will return properties about a given message.",
+            "example": "$getMessage[$channelID;$messageID;content]",
+            "version": "v6"
+        },
+        {
+            "function": "$getReactions",
+            "usage": "$getReactions[channelID;messageID;reaction;force?;option?]",
+            "description": "will return properties about a given reaction on a specific message.",
+            "example": "$getReactions[$channelID;$messageID;👋;true;mention]\n$addCmdReactions[👋]",
+            "version": "v6"
+        },
+        {
+            "function": "$getRoleColor",
+            "usage": "$getRoleColor[roleId;guildId?]",
+            "description": "will return the given role's color.",
+            "example": "$getRoleColor[$highestRole]",
+            "version": "v6"
+        },
+        {
+            "function": "$getUserBadges",
+            "usage": "$getUserBadges[userId?;sep?]",
+            "description": "will return the given users's badges.",
+            "example": "$getUserBadges[$authorID;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildAFKChannelID",
+            "usage": "$guildAFKChannelID[guildID?]",
+            "description": "will return a guild's AFK voice channel",
+            "example": "$guildAFKChannelID",
+            "version": "v6"
+        },
+        {
+            "function": "$guildAvailable",
+            "usage": "$guildAvailable[guildID?]",
+            "description": "will return if the given guild is available on Discord.",
+            "example": "$guildAvailable[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildBanner",
+            "usage": "$guildBanner[guildID?]",
+            "description": "will return the guild banner of a given guild.",
+            "example": "$guildBanner[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildBoostCount",
+            "usage": "$guildBoostCount[guildID?]",
+            "description": "will return the guild's boost count.",
+            "example": "$guildBoostCount[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildBoostLevel",
+            "usage": "$guildBoostLevel[guildID?]",
+            "description": "will return the guild's boost level.",
+            "example": "$guildBoostLevel[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildChannels",
+            "usage": "$guildChannels[guildID?;option?;sep?]",
+            "description": "will return all channels of a specific guild.",
+            "example": "$guildChannels[$guildID;mention;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildContentFilter",
+            "usage": "$guildContentFilter[guildID?]",
+            "description": "will return the guild's content filter level.",
+            "example": "$guildContentFilter[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildCount",
+            "usage": "$guildCount",
+            "description": "will return the amount of guilds where your bot is in.",
+            "example": "I'm in $guildCount guilds!",
+            "version": "v6"
+        },
+        {
+            "function": "$guildDefaultMessageNotifications",
+            "usage": "$guildDefaultMessageNotifications[guildID?]",
+            "description": "will return given guild's default message notification type.",
+            "example": "$guildDefaultMessageNotifications",
+            "version": "v6"
+        },
+        {
+            "function": "$guildDescription",
+            "usage": "$guildDescription[guildID?]",
+            "description": "will return the guild's description.",
+            "example": "$guildDescription[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildEmojis",
+            "usage": "$guildEmojis[sep?;guildID?]",
+            "description": "will return the emojis of a specific guild.",
+            "example": "$guildEmojis[, ;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildFeatures",
+            "usage": "$guildFeatures[guildID?]",
+            "description": "will return unlocked guild features.",
+            "example": "$guildFeatures[$guildID;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildID",
+            "usage": "$guildID[name?]",
+            "description": "will return the guild ID of a given guild.",
+            "example": "$guildID",
+            "version": "v6"
+        },
+        {
+            "function": "$guildIDS",
+            "usage": "$guildIDS[sep?]",
+            "description": "will return the ID of every guild your bot is in.",
+            "example": "$guildIDS[, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildIcon",
+            "usage": "$guildIcon[guildID?]",
+            "description": "will return the guild's icon.",
+            "example": "$guildIcon[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildMFALevel",
+            "usage": "$guildMFALevel[guildID?]",
+            "description": "will return the guild's MFA Level.",
+            "example": "$guildMFALevel[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildNSFWLevel",
+            "usage": "$guildNSFWLevel[guildID?]",
+            "description": "will return the guild's NSFW level.",
+            "example": "$guildNSFWLevel[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildName",
+            "usage": "$guildName[guildID?]",
+            "description": "will return a guild's name.",
+            "example": "$guildName[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildNames",
+            "usage": "$guildNames[sep?]",
+            "description": "will return the guide names your bot is in.",
+            "example": "$guildNames[, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildPreferredLocale",
+            "usage": "$guildPreferredLocale[guildID?]",
+            "description": "will return a guild's set locale.",
+            "example": "$guildPreferredLocale[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildRoles",
+            "usage": "$guildRoles[guildID?;option?;sep?]",
+            "description": "will return all roles of a specific guild.",
+            "example": "$description[$guildRoles[$guildID;name;, ]]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildRulesChannelID",
+            "usage": "$guildRulesChannelID[guildID?]",
+            "description": "will return a guild's set rules channel ID.",
+            "example": "$guildRulesChannelID[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildSplash",
+            "usage": "$guildSplash[guildID?]",
+            "description": "will return a guild's invite background (if unlocked).",
+            "example": "$guildSplash[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildVerificationLevel",
+            "usage": "$guildVerificationLevel[guildID?]",
+            "description": "will return the guild's verification level.",
+            "example": "$guildVerificationLevel[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$highestGuildRole",
+            "usage": "$highestGuildRole[guildID?;option?]",
+            "description": "will return the highest guild role of a specific guild.",
+            "example": "$highestGuildRole[$guildID;name]",
+            "version": "v6"
+        },
+        {
+            "function": "$highestRole",
+            "usage": "$highestRole[userID?;guildID?;option?]",
+            "description": "will return the highest role of a specific user.",
+            "example": "$highestRole[$authorID;$guildID;name]",
+            "version": "v6"
+        },
+        {
+            "function": "$hoistedRole",
+            "usage": "$hoistedRole[userID?;guildID?;option?]",
+            "description": "will return the highest hoisted role of an user.",
+            "example": "$hoistedRole[$authorID;$guildID;name]",
+            "version": "v6"
+        },
+        {
+            "function": "$interactionPing",
+            "usage": "$interactionPing",
+            "description": "will return the latency of an interaction.",
+            "example": "$interactionUpdate[This took me: $interactionPing MS!]",
+            "version": "v6"
+        },
+        {
+            "function": "$lowestGuildRole",
+            "usage": "$lowestGuildRole[guildID?]",
+            "description": "will return the lowest role of a specific guild.",
+            "example": "$lowestGuildRole[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$lowestRole",
+            "usage": "$lowestRole[userID?;guildID?]",
+            "description": "will return the lowest role of a specific user.",
+            "example": "$lowestRole[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$maxRam",
+            "usage": "$maxRam",
+            "description": "will return the bot's maximum amount of Ram.",
+            "example": "$maxRam",
+            "version": "v6"
+        },
+        {
+            "function": "$maximumMembers",
+            "usage": "$maximumMembers[guildID?]",
+            "description": "will return the maximal amount of members a guild can have.",
+            "example": "You can have: $maximumMembers[$guildID] Members in this guild!",
+            "version": "v6"
+        },
+        {
+            "function": "$memberAvatar",
+            "usage": "$memberAvatar[guildID?;userID?;size?;dynamic?;format?]",
+            "description": "will return the profile picture of a guild member.",
+            "example": "$memberAvatar[$guildID;$authorID;2048;true;webp]",
+            "version": "v6"
+        },
+        {
+            "function": "$memberJoinPosition",
+            "usage": "$memberJoinPosition[userID?;guildID?]",
+            "description": "will return a members join position.",
+            "example": "$memberJoinPosition[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$memberJoinedDate",
+            "usage": "$memberJoinedDate[userID?;guildID?]",
+            "description": "will return a members join date in MS.",
+            "example": "$memberJoinedDate[$authorID;$guildID] -> $parseDate[$memberJoinedDate[$authorID;$guildID]]",
+            "version": "v6"
+        },
+        {
+            "function": "$membersCount",
+            "usage": "$membersCount[guildID?;presence?;countBot?]",
+            "description": "will return a guild's member count.",
+            "example": "$membersCount[$guildID;offline;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$message",
+            "usage": "$message[index?]",
+            "description": "will return given arguments of a message.",
+            "example": "$message[index?]",
+            "version": "v6"
+        },
+        {
+            "function": "$messageAttachment",
+            "usage": "$messageAttachment[index?]",
+            "description": "will return a message attachment depending on the given index.",
+            "example": "You had the following attachment in your message: $messageAttachment",
+            "version": "v6"
+        },
+        {
+            "function": "$messageFlags",
+            "usage": "$messageFlags[messageID;sep?;channelID?]",
+            "description": "will return a message's flags.",
+            "example": "$messageFlags[$messageID;, ;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$messageID",
+            "usage": "$messageID",
+            "description": "will return the message ID.",
+            "example": "The message ID of your the message you just sent is: \"$messageID\"",
+            "version": "v6"
+        },
+        {
+            "function": "$messagePing",
+            "usage": "$messagePing",
+            "description": "will return the latency of the messa",
+            "example": "$messagePing",
+            "version": "v6"
+        },
+        {
+            "function": "$messageType",
+            "usage": "$messageType[messageID?;channelID?]",
+            "description": "will return the type of a given message.",
+            "example": "$messageType[$messageID;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$messageURL",
+            "usage": "$messageURL[messageID?;channelID?]",
+            "description": "will return the URL of a given message.",
+            "example": "$messageURL[$messageID;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$messageWebhookID",
+            "usage": "$messageWebhookID[messageID?;channelID?]",
+            "description": "will return the ID of the webhook which sent the given message.",
+            "example": "$messageWebhookID[messageID;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$mutualGuilds",
+            "usage": "$mutualGuilds[userID?;sep?]",
+            "description": "will return the mutual servers with a given user and the bot.",
+            "example": "$mutualGuilds[$authorID;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$nickname",
+            "usage": "$nickname[userID?;guildID?;returnUser?]",
+            "description": "will return a user's nickname.",
+            "example": "$replaceText[$replaceText[$checkCondition[$nickname[$authorID;$guildID;true]==];true;$username[$authorID]];false;$nickname[$authorID;$guildID;true]]",
+            "version": "v6"
+        },
+        {
+            "function": "$ownerID",
+            "usage": "$ownerID[guildID?]",
+            "description": "will return the ID of the server owner, depending on the given argument.",
+            "example": "$ownerID[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$ping",
+            "usage": "$ping",
+            "description": "will return the bot's latency.",
+            "example": "My ping is: $pingMS!",
+            "version": "v6"
+        },
+        {
+            "function": "$platform",
+            "usage": "$platform[userID?;guildID?;sep?]",
+            "description": "will return the platform which the user is using Discord with.",
+            "example": "$platform[$authorID;$guildID;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$ram",
+            "usage": "$ram",
+            "description": "will return the RAM usage of your bot.",
+            "example": "I'm currently using \\`$ram%\\` out of \\`$maxRam%\\`!",
+            "version": "v6"
+        },
+        {
+            "function": "$reactionCount",
+            "usage": "$reactionCount[channelID;messageID;emoji]",
+            "description": "will return the amount of users who reacted to a specific emoji.",
+            "example": "There are: $reactionCount[$channelID;$messageID;😫] reactions!\n$addCmdReactions[😫]",
+            "version": "v6"
+        },
+        {
+            "function": "$readyTimestamp",
+            "usage": "$readyTimestamp",
+            "description": "will return the timestamp of when the bot was ready.",
+            "example": "$readyTimestamp",
+            "version": "v6"
+        },
+        {
+            "function": "$referenceChannelId",
+            "usage": "$referenceChannelId",
+            "description": "will return the channel ID of where the user replied in.",
+            "example": "$referenceChannelId",
+            "version": "v6"
+        },
+        {
+            "function": "$referenceGuildId",
+            "usage": "$referenceGuildId",
+            "description": "will return the guild ID of where the user replied in.",
+            "example": "$referenceGuildId",
+            "version": "v6"
+        },
+        {
+            "function": "$referenceMessageId",
+            "usage": "$referenceMessageId",
+            "description": "will return the message ID of the message where the user replied to.",
+            "example": "$referenceMessageId",
+            "version": "v6"
+        },
+        {
+            "function": "$roleCount",
+            "usage": "$roleCount[guildID?;fetchFirst?]",
+            "description": "will return the guild's role count.",
+            "example": "$roleCount[$guildID;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$roleMembersCount",
+            "usage": "$roleMembersCount[roleID;guildID?]",
+            "description": "will return the amount of members who have a specific role.",
+            "example": "$roleMembersCount[$guildID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$roleName",
+            "usage": "$roleName[roleID;guildID?]",
+            "description": "will return the name of a specific role.",
+            "example": "$roleName[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$rolePerms",
+            "usage": "$rolePerms[roleID;sep?;guildID?]",
+            "description": "will return all given permissions of a role.",
+            "example": "$rolePerms[$guildID;, ;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$rolePosition",
+            "usage": "$rolePosition[roleID;guildID?]",
+            "description": "will return the role position of a specific role.",
+            "example": "$rolePosition[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$shardGuilds",
+            "usage": "$shardGuilds[option?;sep?;shardId]",
+            "description": "will return the guilds of a specific shard.",
+            "example": "$shardGuilds[name;, ;$shardID]",
+            "version": "v6"
+        },
+        {
+            "function": "$shardID",
+            "usage": "$shardID",
+            "description": "will return the current shard ID.",
+            "example": "I'm currently on shard $shardID!",
+            "version": "v6"
+        },
+        {
+            "function": "$shardPing",
+            "usage": "$shardPing[shardId?]",
+            "description": "will return the latency of a specific shard.",
+            "example": "$shardPing[$shardId]MS",
+            "version": "v6"
+        },
+        {
+            "function": "$status",
+            "usage": "$status[userId?;guildId?]",
+            "description": "will a user's presence.",
+            "example": "$status[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$systemChannelID",
+            "usage": "$systemChannelID[guildID?]",
+            "description": "will return the ID of the guild's system channel.",
+            "example": "$systemChannelID[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$uptime",
+            "usage": "$uptime[option?]",
+            "description": "will return the bot's uptime.",
+            "example": "I've been up for $uptime[full]!",
+            "version": "v6"
+        },
+        {
+            "function": "$uri",
+            "usage": "$uri[text;type?]",
+            "description": "will encode or decode an URL.",
+            "example": "$uri[aoi.js is great :);encode/decode]",
+            "version": "v6"
+        },
+        {
+            "function": "$userActivity",
+            "usage": "$userActivity[guildID?;userID?]",
+            "description": "will return a user's current activity.",
+            "example": "$userActivity[$guildID;$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userAvatar",
+            "usage": "$userAvatar[userID?;size?;dynamic?;format?]",
+            "description": "will return the profile picture of a specific user.",
+            "example": "$userAvatar[$authorID;2048;true;webp]",
+            "version": "v6"
+        },
+        {
+            "function": "$userBanner",
+            "usage": "$userBanner[userID?;size?;dynamic?;format?]",
+            "description": "will return the profile banner of a specific user.",
+            "example": "$userBanner[$authorID;4096;true;webp]",
+            "version": "v6"
+        },
+        {
+            "function": "$userBannerColor",
+            "usage": "$userBannerColor[userID?]",
+            "description": "will return the profile banner color.",
+            "example": "$userBannerColor[$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userCustomStatus",
+            "usage": "$userCustomStatus[userID?;guildID?;method?]",
+            "description": "will return a user's custom status.",
+            "example": "$userCustomStatus[$authorID;$guildID;state]",
+            "version": "v6"
+        },
+        {
+            "function": "$userExists",
+            "usage": "$userExists[userID?]",
+            "description": "will check if a given user exists.",
+            "example": "$userExists[$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userID",
+            "usage": "$userID[user]",
+            "description": "will return a given user's ID.",
+            "example": "$userID[$username]",
+            "version": "v6"
+        },
+        {
+            "function": "$userPerms",
+            "usage": "$userPerms[userID?;sep?;guildID?]",
+            "description": "will return a user's permission of a specific guild.",
+            "example": "$userPerms[$authorID;, ;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userReacted",
+            "usage": "$userReacted[channelID;messageID;userID;emoji]",
+            "description": "will check if a specified user reacted with a specific emoji to a specific message and return either true or false.",
+            "example": "$userReacted[$channelID;$messageID;$clientID;😩]\n$addCmdReactions[😩]",
+            "version": "v6"
+        },
+        {
+            "function": "$userRoleColor",
+            "usage": "$userRoleColor[userID?;guildID?]",
+            "description": "will return the role color of your highest assigned role.",
+            "example": "$userRoleColor[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userRoles",
+            "usage": "$userRoles[userID?;guildID?;option?;sep?]",
+            "description": "will return the roles of a specific user.",
+            "example": "$userRoles[$authorID;$guildID;id;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$userRolesCount",
+            "usage": "$userRolesCount[userID?;guildID?]",
+            "description": "will return a user's role count.",
+            "example": "$userRolesCount[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userTag",
+            "usage": "$userTag[userID?]",
+            "description": "will return a user's username and discriminator.",
+            "example": "$userTag[$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$username",
+            "usage": "$username[userID?]",
+            "description": "will return a user's username.",
+            "example": "$username[$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$usersBanned",
+            "usage": "$usersBanned[guildID?;force?;option?;sep?]",
+            "description": "will return the banned users of a guild.",
+            "example": "$description[$usersBanned[$guildID;false;mention;, ]]",
+            "version": "v6"
+        },
+        {
+            "function": "$usersInChannel",
+            "usage": "$usersInChannel[channelID;option?;sep?]",
+            "description": "will return all users who are connected to the specified voice channel.",
+            "example": "$usersInChannel[$voiceID;user;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$usersWithRole",
+            "usage": "$usersWithRole[roleID;guildID?;option?;sep?]",
+            "description": "will return the users who have a specific role.",
+            "example": "$usersWithRole[roleID;$guildID;id;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$vanityURL",
+            "usage": "$vanityURL[guildID?]",
+            "description": "will return a guild's vanity URL.",
+            "example": "$vanityURL[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$vanityUses",
+            "usage": "$vanityUses[guildID?]",
+            "description": "will return the uses of a vanity URL.",
+            "example": "$vanityUses[$guildID]",
+            "version": "v6"
+        }
+    ],
+    "misc": [
+        {
+            "function": "$addObjectProperty",
+            "usage": "$addObjectProperty[name;value]",
+            "description": "will add a property to an existing object.",
+            "example": "  $getObjectProperty[Leref]\n$addObjectProperty[Leref;Ferel]\n$createObject[{}]",
+            "version": "v6"
+        },
+        {
+            "function": "$advancedTextSplit",
+            "usage": "$advancedTextSplit[text;sep;index;sep?;index?..]",
+            "description": "will split multiple given arguments",
+            "example": "$advancedTextSplit[Hello./Bye.|Ok.;/;2;|;1]",
+            "version": "v6"
+        },
+        {
+            "function": "$appendFile",
+            "usage": "$appendFile[file;text;encode?]",
+            "description": "will add given text to a specific file.",
+            "example": "$appendFile[./index.js;// Hello!]",
+            "version": "v6"
+        },
+        {
+            "function": "$argsCount",
+            "usage": "$argsCount",
+            "description": "will return the amount of given arguments.",
+            "example": "$argsCount",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayAt",
+            "usage": "$arrayAt[name;index]",
+            "description": "will choose the index (position) of the array element to be returned. Returns nothing if the given index can not be found.",
+            "example": " $arrayAt[Aoi;3]\n$createArray[Aoi;Aoi.music;Aoi.panel;Aoi.dashboard;Aoi]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayConcat",
+            "usage": "$arrayConcat[seperator;name]",
+            "description": "will concat the array",
+            "example": "$arrayConcat[ ;test;test2]\n$createArray[test;This is]$createArray[test2;a test]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayEvery",
+            "usage": "will test whether all elements in the array pass the condition.",
+            "description": "$arrayEvery[name;query;queryType?]",
+            "example": "$arrayEvery[array;30;==]\n$createArray[array;1;2;3;0;30]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayFilter",
+            "usage": "$arrayFilter[name;query;queryType?;seperator?]",
+            "description": "will check whether a element in the array equals the query and return it.",
+            "example": "$arrayFilter[array;akarui;==;, ]\n $createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayFind",
+            "usage": "$arrayFind[name;query;queryType?;seperator?]",
+            "description": "will check for the first element in the array which matches the query and return it.",
+            "example": "$arrayFind[array;akarui;==;, ]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayForEach",
+            "usage": "$arrayForEach[name;awaitedCommand;awaitData?]",
+            "description": "will execute an awaited command for each item in the array.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayIncludes",
+            "usage": "$arrayIncludes[name;query]",
+            "description": "will check if a specific item exists in the array.",
+            "example": "$arrayIncludes[array;Leref]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayIndexOf",
+            "usage": "$arrayIndexOf[name;query]",
+            "description": "will return the index of the first found item of the query.",
+            "example": "$arrayIndexOf[array;akarui]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayJoin",
+            "usage": "$arrayJoin[name;seperator?]",
+            "description": "will join the array with a given seperator.",
+            "example": "$arrayJoin[array;, ]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayLastIndexOf",
+            "usage": "$arrayLastIndexOf[name;query]",
+            "description": "will return the index of the last found item of the query.",
+            "example": "$arrayLastIndexOf[array;akarui]\n$createArray[array;aoi.js;akarui;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayLength",
+            "usage": "$arrayLength[name]",
+            "description": "will return the length of a given array.",
+            "example": "$arrayLength[array]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayMap",
+            "usage": "$arrayMap[name;awaitedCommand;seperator?;awaitData?]",
+            "description": "will create a map with the given array.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayPop",
+            "usage": "$arrayPop[name]",
+            "description": "will return the last item of the given array.",
+            "example": "$arrayPop[array]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayPush",
+            "usage": "$arrayPush[...elements]",
+            "description": "will add given elements to the array.",
+            "example": "$arrayPush[array;Leref;Ayaka;Ferel]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayReverse",
+            "usage": "$arrayReverse[name]",
+            "description": "will reverse the elements in the given array.",
+            "example": "$arrayReverse[array]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayShift",
+            "usage": "$arrayShift[name]",
+            "description": "will return the first item of the given array.",
+            "example": "$arrayShift[array]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayShuffle",
+            "usage": "$arrayShuffle[name]",
+            "description": "will shuffle the elements of the given array.",
+            "example": "$arrayJoin[array;, ]\n$arrayShuffle[array]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arraySome",
+            "usage": "$arraySome[name;query;queryType?]",
+            "description": "will check for given elements in the array and return boolean.",
+            "example": "$arraySome[array;aoi.js;==]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arraySort",
+            "usage": "$arraySort[name;type?]",
+            "description": "will sort a given array.",
+            "example": "$arrayJoin[array;, ]\n$arraySort[array;asc]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arraySplice",
+            "usage": "$arraySplice[name;index;amount;...elements]",
+            "description": "will splice elements from the array.",
+            "example": "$arraySplice[array;2;3]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$arrayUnshift",
+            "usage": "$arrayUnshift[name]",
+            "description": "will return the amount of elements of the given array.",
+            "example": "$arrayUnshift[array]\n$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$awaitData",
+            "usage": "$awaitData[name]",
+            "description": "will return awaited data given in awaited commands.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$closeTicket",
+            "usage": "$closeTicket[error?]",
+            "description": "will delete a ticket created by $newTicket.",
+            "example": "$closeTicket[Something went wrong!]",
+            "version": "v6"
+        },
+        {
+            "function": "$createArray",
+            "usage": "$createArray[name;...elements]",
+            "description": "will create a new array with given elements.",
+            "example": "$createArray[array;aoi.js;akarui;documents;bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$createCache",
+            "usage": "$createCache[type;name;options]",
+            "description": "will create custom cache.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$createObject",
+            "usage": "$createObject[object]",
+            "description": "will create a new object.",
+            "example": "$createObject[{\"hello\": \"bye\", \"bye\": \"hello\"}]",
+            "version": "v6"
+        },
+        {
+            "function": "$createVar",
+            "usage": "$createVar[table;...vars]",
+            "description": "will create a new variable.",
+            "example": "$createVar[main;variable;value]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteArray",
+            "usage": "$deleteArray[name]",
+            "description": "will delete a previously created array.",
+            "example": "$deleteArray[array]\n$createArray[array;Hello;This;Is;Great]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteFile",
+            "usage": "$deleteFile[path]",
+            "description": "will delete a given file.",
+            "example": "$deleteFile[./index.js]",
+            "version": "v6"
+        },
+        {
+            "function": "$deleteVar",
+            "usage": "$deleteVar[variable;id;table?]",
+            "description": "will delete a given variable.",
+            "example": "$deleteVar[Test;$authorID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$djsEval",
+            "usage": "$djsEval[code;returnCode?]",
+            "description": "will execute given discord.js code.",
+            "example": "$djsEval[msg.author.id;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$editTextSplitElement",
+            "usage": "$editTextSplitElement[index;text]",
+            "description": "will edit a specific text split element.",
+            "example": "$editTextSplitElement[3;Goodbye]\n$textSplit[Hello, Bye, Cya;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$endif",
+            "usage": "$endif",
+            "description": "is used to end an if statement.",
+            "example": "$if[1==1]\nHello!\n$endif",
+            "version": "v6"
+        },
+        {
+            "function": "$error",
+            "usage": "$error",
+            "description": "will return information about the error, used in onFunctionError commands.",
+            "example": "$error",
+            "version": "v6"
+        },
+        {
+            "function": "$eval",
+            "usage": "$eval[code;returnCode?;sendMessage?;returnExecution?;returnID?]",
+            "description": "will execute given aoi.js code.",
+            "example": "$eval[$authorID;true;true;true;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$eventData",
+            "usage": "$eventData",
+            "description": "will return event data.",
+            "example": "$eventData",
+            "version": "v6"
+        },
+        {
+            "function": "$eventEmit",
+            "usage": "$eventEmit[name;...datas]",
+            "description": "will emit a custom event.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$exec",
+            "usage": "$exec[code]",
+            "description": "will execute given code in your console.",
+            "example": "$exec[node -v]",
+            "version": "v6"
+        },
+        {
+            "function": "$executionTime",
+            "usage": "$executionTime",
+            "description": "will return the execution time.",
+            "example": "This took: $executionTime MS",
+            "version": "v6"
+        },
+        {
+            "function": "$fileExists",
+            "usage": "$fileExists[path]",
+            "description": "will check if a given file exists.",
+            "example": "$fileExists[./index.js]",
+            "version": "v6"
+        },
+        {
+            "function": "$fileSize",
+            "usage": "$fileSize[path;unit?]",
+            "description": "will return the size of a given file.",
+            "example": "$fileSize[./index.js;GB]",
+            "version": "v6"
+        },
+        {
+            "function": "$findInCache",
+            "usage": "$findInCache[type;name;prop;value;findType?;returnValue?]",
+            "description": "will search for given arguments in your bot's cache.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$findTextSplitIndex",
+            "usage": "$findTextSplitIndex[query]",
+            "description": "will return the index of a text split element after a given query.",
+            "example": "$findTextSplitIndex[Cya]\n$textSplit[Hello, Bye, Cya;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$forEachChannel",
+            "usage": "$forEachChannel[time;awaitData;...awaitedCmds;endCmd?]",
+            "description": "will execute awaited commands in every channel of every guild.",
+            "example": "https://aoi.js.org/docs/functions/Misc/forEachChannel",
+            "version": "v6"
+        },
+        {
+            "function": "$forEachGuild",
+            "usage": "$forEachGuild[time;awaitData;...awaitedCmds;endCmd?]",
+            "description": "will execute given awaited commands in every guild.",
+            "example": "https://aoi.js.org/docs/functions/Misc/forEachGuild",
+            "version": "v6"
+        },
+        {
+            "function": "$forEachGuildChannel",
+            "usage": "$forEachGuildChannel[time;awaitData;...awaitedCmds;endCmd?]",
+            "description": "will execute awaited commands in every channel of the current guild.",
+            "example": "https://aoi.js.org/docs/functions/Misc/forEachGuildChannel",
+            "version": "v6"
+        },
+        {
+            "function": "$forEachMember",
+            "usage": "$forEachMember[time;awaitData;...awaitedCmds;endCmd?]",
+            "description": "will execute awaited commands for user within the current guild.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$forEachRole",
+            "usage": "$forEachRole[guildID;time;awaitData;...awaitedCmds;endCmd?]",
+            "description": "will execute awaited commands for every role in a given guild.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$forEachUser",
+            "usage": "$forEachUser[time;awaitData;...awaitedCmds;endCmd?]",
+            "description": "will execute awaited commands for user across all guilds.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$getApplicationCommandID",
+            "usage": "$getApplicationCommandID[name;type?]",
+            "description": "will return the ID of a given application command.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$getApplicationCommandOptions",
+            "usage": "$getApplicationCommandOptions[name;type?]",
+            "description": "will return the ID of a given application command.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$getCacheData",
+            "usage": "$getCacheData[type;name;key;option?]",
+            "description": "will return cache data.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$getChannelVar",
+            "usage": "$getChannelVar[varname;channelID?;table?]",
+            "description": "will return the value of a given channel variable.",
+            "example": "$getChannelVar[Example;$channelID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$getCooldownTime",
+            "usage": "$getCooldownTime[time;type;command;id]",
+            "description": "will return the cooldown time of a given command.",
+            "example": "$cooldown[2m;]\n$getCooldownTime[2m;user;getCooldownTime;$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$getGlobalUserVar",
+            "usage": "$getGlobalUserVar[varname;userID?;table?]",
+            "description": "will return the value of a given global user variable.",
+            "example": "$getGlobalUserVar[Example;$authorID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$getGuildVar",
+            "usage": "$getGuildVar[varname;guildID?;table?]",
+            "description": "will return the value of a given guild variable.",
+            "example": "$getGuildVar[Example;$guildID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$getLeaderboardInfo",
+            "usage": "$getLeaderboardInfo[variable;id;type?;option?]",
+            "description": "will return information about a given variable sorted in a leaderboard.",
+            "example": "$getLeaderboardInfo[Example;$guildID;server;top]",
+            "version": "v6"
+        },
+        {
+            "function": "$getMessageVar",
+            "usage": "$getMessageVar[varname;guildID?;table?]",
+            "description": "will return the value of a given message variable.",
+            "example": "$getMessageVar[Example;$messageID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$getObject",
+            "usage": "$getObject[format?]",
+            "description": "will return the previously created object.",
+            "example": "$getObject[true]\n$createObject[{\"hello\": \"bye\"}]",
+            "version": "v6"
+        },
+        {
+            "function": "$getObjectProperty",
+            "usage": "$getObjectProperty[name]",
+            "description": "will return a object property of a given object.",
+            "example": "$getObjectProperty[hello]\n$createObject[{\"hello\": \"bye\"}]",
+            "version": "v6"
+        },
+        {
+            "function": "$getUserVar",
+            "usage": "$getUserVar[varname;userID?;id?;table?]",
+            "description": "will return the value of a given user variable.",
+            "example": "$getUserVar[Example;$authorID;$guildID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$getVar",
+            "usage": "$getVar[varname;table?]",
+            "description": "will return the value of a global variable",
+            "example": "$getVar[Example;main",
+            "version": "v6"
+        },
+        {
+            "function": "$globalUserLeaderBoard",
+            "usage": "$globalUserLeaderBoard[variable;type?;custom?;list?;page?;table?]",
+            "description": "will return a leaderboard of a global user variable.",
+            "example": "$globalUserLeaderBoard[Example;asc;{top}) {username} : {value};10;1;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildLeaderboard",
+            "usage": "$guildLeaderboard[variable;type?;custom?;list?;page?;table?]",
+            "description": "will return a leaderboard of a guild variable.",
+            "example": "$guildLeaderboard[Example;asc;{top}) {username} : {value};10;1;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$hour",
+            "usage": "$hour",
+            "description": "will return the current hour in CST.",
+            "example": "$hour\n$timezone[America/New_York]",
+            "version": "v6"
+        },
+        {
+            "function": "$httpRequest",
+            "usage": "$httpRequest[url;method?;body?;property?;error?;headerName:headerValue?]",
+            "description": "either posts to or retrieves data from an API.",
+            "example": "$httpRequest[https://some-random-api.ml/facts/dog;GET;;fact;Something went wrong.]",
+            "version": "v6"
+        },
+        {
+            "function": "$humanizeMs",
+            "usage": "$humanizeMs[time]",
+            "description": "will convert MS to human-readable time.",
+            "example": "$humanizeMs[16782516189]",
+            "version": "v6"
+        },
+        {
+            "function": "$if",
+            "usage": "$if[condition;true;false?]",
+            "description": "will check a condition and return either true or false depending on the condition being true or false.",
+            "example": "$if[1==2;That's true!;That's false!]",
+            "version": "v6"
+        },
+        {
+            "function": "$ifAwaited",
+            "usage": "$ifAwaited[condition;true;false?]",
+            "description": "will check a condition and executed an awaited command depending on the condition being true or false.",
+            "example": "https://aoi.js.org/docs/functions/Misc/ifAwaited",
+            "version": "v6"
+        },
+        {
+            "function": "$isTicket",
+            "usage": "$isTicket[channelID?]",
+            "description": "will return either true or false depending on the channel being a ticket channel.",
+            "example": "$isTicket[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$joinSplitText",
+            "usage": "$joinSplitText[sep?]",
+            "description": "will join all text split elements by a given seperator.",
+            "example": "$joinSplitText[, ]\n$textSplit[Hello:Bye:Leref;:]",
+            "version": "v6"
+        },
+        {
+            "function": "$jsonRequest",
+            "usage": "$jsonRequest[url;property?;error?;headerName:headerValue?]",
+            "description": "will send a GET request to a given URL.",
+            "example": "$jsonRequest[https://some-random-api.ml/facts/dog;fact;Something went wrong.]",
+            "version": "v6"
+        },
+        {
+            "function": "$killClient",
+            "usage": "$killClient",
+            "description": "will forcefully shutdown your bot.",
+            "example": "$killClient",
+            "version": "v6"
+        },
+        {
+            "function": "$lerefAvatar",
+            "usage": "$lerefAvatar",
+            "description": "will return the Avatar of the creator of aoi.js",
+            "example": "$lerefAvatar",
+            "version": "v6"
+        },
+        {
+            "function": "$log",
+            "usage": "$log[message]",
+            "description": "will log a given message in your bot's console.",
+            "example": "$log[Aoi.js is great!]",
+            "version": "v6"
+        },
+        {
+            "function": "$loop",
+            "usage": "$loop[time;awaitData;...awaitedCmds]",
+            "description": "will execute awaited commands a given amount of times.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$map",
+            "usage": "$map[text;split;awaits;sep?]",
+            "description": "will execute awaited commands for given elements.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$minute",
+            "usage": "$minute",
+            "description": "will return the current minute in CST.",
+            "example": "$minute\n$timezone[America/New_York]",
+            "version": "v6"
+        },
+        {
+            "function": "$month",
+            "usage": "$month",
+            "description": "will return the current month.",
+            "example": "$month",
+            "version": "v6"
+        },
+        {
+            "function": "$newTicket",
+            "usage": "$newTicket[name;msg;categoryID?;returnId?;error?]",
+            "description": " will create a new ticket channel.",
+            "example": "$newTicket[ticket-$username;Hello <@$authorID!;$guildID;false;Error!]",
+            "version": "v6"
+        },
+        {
+            "function": "$noEscapingMessage",
+            "usage": "$noEscapingMessage[args]",
+            "description": "will return the non escaped message.",
+            "example": "$noEscapingMessage[1]",
+            "version": "v6"
+        },
+        {
+            "function": "$noMentionMessage",
+            "usage": "$noMentionMessage[args]",
+            "description": "will return the part of the message which contains no mention.",
+            "example": "$noMentionMessage[1]",
+            "version": "v6"
+        },
+        {
+            "function": "$nodeVersion",
+            "usage": "$nodeVersion",
+            "description": "will return your current nodejs version.",
+            "example": "$nodeVersion",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyBotPerms",
+            "usage": "$onlyBotPerms[...perms;error?]",
+            "description": "will check if the bot has the listed permission and return a error message if not.",
+            "example": "$onlyBotPerms[administrator;I don't have administrator permissions!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyForCategories",
+            "usage": "$onlyForCategories[...categoryIds;error?]",
+            "description": "will check if the command was executed in the category of the execution channel and return a error message if not.",
+            "example": "$onlyForCategories[categoryID;categoryID;You can't use that command here!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyForChannels",
+            "usage": "$onlyForChannels[...categoryIds;error?]",
+            "description": "will check if the command was executed in one of the listed channels and return a error message if not.",
+            "example": "$onlyForChannels[channelID;channelID;You can't use that command here!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyForGuilds",
+            "usage": "$onlyForGuilds[...guildIds;error?]",
+            "description": "will check if the command was executed in one of the listed guilds and return a error message if not.",
+            "example": "$onlyForGuilds[guildID;guildID;You can't use that command here!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyForIDs",
+            "usage": "$onlyForIDs[...userIds;error?]",
+            "description": "will check if the command was executed by any user of the listed user IDs and return a error if not.",
+            "example": "$onlyForIDs[$botOwnerID;You can't use that command!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyForRoles",
+            "usage": "$onlyForRoles[...roleIds;error?]",
+            "description": "will check if the user who executed the command has any of the listed roles and return a error message if not.",
+            "example": "$onlyForRoles[roleID;roleID;You can't use that command!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyIf",
+            "usage": "$onlyIf[condition;error?]",
+            "description": "will check for a condition and return a error message if that condition does not match.",
+            "example": "$onlyIf[5==3;That's wrong!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyIfMessageContains",
+            "usage": "$onlyIfMessageContains[message;...text;error?]",
+            "description": "will check if the message contains the given text and if not return a error message.",
+            "example": "$onlyIfMessageContains[Hello!;aoi.js;Couldn't find that word!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyNSFW",
+            "usage": "$onlyNSFW[error?]",
+            "description": "will check if the command was executed in a NSFW channel and return a error message if not.",
+            "example": "$onlyNSFW[You can't use that command here!]",
+            "version": "v6"
+        },
+        {
+            "function": "$onlyPerms",
+            "usage": "$onlyPerms[...perms;error?]",
+            "description": "will check if the user has the listed permission and return a error message if not.",
+            "example": "$onlyPerms[administrator;You don't have administrator permissions!]",
+            "version": "v6"
+        },
+        {
+            "function": "$packageDependencies",
+            "usage": "$packageDependencies",
+            "description": "will return aoi.js' package dependencies.",
+            "example": "$packageDependencies",
+            "version": "v6"
+        },
+        {
+            "function": "$packageVersion",
+            "usage": "$packageVersion",
+            "description": "will return your current aoi.js version.",
+            "example": "$packageVersion",
+            "version": "v6"
+        },
+        {
+            "function": "$rawLeaderboard",
+            "usage": "$rawLeaderboard[variable;order?;type?;custom?;list?;page?;table?]",
+            "description": "will return a leaderboard of the given type.",
+            "example": "$rawLeaderboard[Example;asc;globalUser;{top}) {username} : {value};10;1;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$readFile",
+            "usage": "$readFile[path]",
+            "description": "will read a file's content and return it.",
+            "example": "$readFile[./index.js]",
+            "version": "v6"
+        },
+        {
+            "function": "$reboot",
+            "usage": "$reboot",
+            "description": "will restart your bot",
+            "example": "$reboot",
+            "version": "v6"
+        },
+        {
+            "function": "$removeContains",
+            "usage": "$removeContains[text;...words]",
+            "description": "will remove specific text from a give text.",
+            "example": "$removeContains[Hello, aoi.js!;, ;aoi.js]",
+            "version": "v6"
+        },
+        {
+            "function": "$removeSplitTextElement",
+            "usage": "$removeSplitTextElement[...elements]",
+            "description": "will remove a specific split text element.",
+            "example": "$removeSplitTextElement[bye]\n$textSplit[hello, bye, aoi.js;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$removeTextSplitElement",
+            "usage": "$removeTextSplitElement[element]",
+            "description": "will remove a specific text split element.",
+            "example": "$removeTextSplitElement[bye]\n$textSplit[hello, bye, aoi.js;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$renameFile",
+            "usage": "$renameFile[oldFile;newFile]",
+            "description": "will rename a file of your bot's directory.",
+            "example": "$renameFile[./index.js;./index.txt]",
+            "version": "v6"
+        },
+        {
+            "function": "$resetGlobalUserVar",
+            "usage": "$resetGlobalUserVar[varname;table?]",
+            "description": "will set a given global user variable to its default value.",
+            "example": "$resetGlobalUserVar[Example;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$resetGuildVar",
+            "usage": "$resetGuildVar[varname;table?]",
+            "description": "will set a given guild variable to its default value.",
+            "example": "$resetGuildVar[Example;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$resetUserVar",
+            "usage": "$resetUserVar[varname;guildID?;table?]",
+            "description": "will set a given user variable to its default value of a given guild.",
+            "example": "$resetUserVar[Example;$guildID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$second",
+            "usage": "$second",
+            "description": "will return the current second in CST.",
+            "example": "$second\n$timezone[America/New_York]",
+            "version": "v6"
+        },
+        {
+            "function": "$setCacheData",
+            "usage": "$setCacheData[type;cacheName;cacheKey;cacheValue]",
+            "description": "will modify given cache data.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$setChannelVar",
+            "usage": "$setChannelVar[varname;value;channelID?;table?]",
+            "description": "will change the value of a given channel variable.",
+            "example": "$setChannelVar[Example;This is a value;$channelID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$setGlobalUserVar",
+            "usage": "$setGlobalUserVar[varname;value;userID?;table?]",
+            "description": "will change the value of a given global user variable.",
+            "example": "$setGlobalUserVar[Example;This is a value;$channelID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$setGuildVar",
+            "usage": "$setGuildVar[varname;value;guildID?;table?]",
+            "description": "will change the value of a given guild variable.",
+            "example": "$setGuildVar[Example;This is a value;$guildID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$setMessageVar",
+            "usage": "$setMessageVar[varname;value;messageID?;table?]",
+            "description": "will change the value of a given message variable.",
+            "example": "$setMessageVar[Example;This is a value;$messageID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$setTimeout",
+            "usage": "$setTimeout[name;duration;timeoutData;returnId?;pulse?]",
+            "description": "will set a timeout for a given action (which will even continue to run after bot restart).",
+            "example": "https://aoi.js.org/docs/functions/Misc/setTimeout",
+            "version": "v6"
+        },
+        {
+            "function": "$setUserVar",
+            "usage": "$setUserVar[varname;value;userID?;id?;table?]",
+            "description": "will change the value of a given user variable.",
+            "example": "$setUserVar[Example;This is a value;$authorID;$guildID;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$setVar",
+            "usage": "$setVar[varname;value;table?]",
+            "description": "will change the value of a given global variable.",
+            "example": "$setVar[Example;This is a value;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$shutdown",
+            "usage": "$shutdown",
+            "description": "will shutdown / end the process of your bot.",
+            "example": "$shutdown",
+            "version": "v6"
+        },
+        {
+            "function": "$stopTimeout",
+            "usage": "$stopTimeout[id]",
+            "description": "will stop a timeout created by $setTimeout.",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$suppressErrors",
+            "usage": "$suppressErrors[errorMsg?]",
+            "description": "will suppress aoi.js function errors.",
+            "example": "$description\n$suppressErrors[Something went wrong!]",
+            "version": "v6"
+        },
+        {
+            "function": "$timeZone",
+            "usage": "$timeZone[timezone]",
+            "description": "will change the timezone of any time function in the used command.",
+            "example": "$hour:$minute:$second\n$timeZone[America/New_York]",
+            "version": "v6"
+        },
+        {
+            "function": "$updateCommands",
+            "usage": "$updateCommands",
+            "description": "will reload your commands of your command folder / will make changes effective.",
+            "example": "$updateCommands",
+            "version": "v6"
+        },
+        {
+            "function": "$useChannel",
+            "usage": "$useChannel[channelID]",
+            "description": "will use the specified channel and execute all function inside of it instead.",
+            "example": "$description[Hello!]\n$useChannel[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$userLeaderBoard",
+            "usage": "$userLeaderBoard[guildID;variable;order?;custom?;list?;page?;table?]",
+            "description": "will return a leaderboard of a user variable.",
+            "example": "$userLeaderBoard[$guildID;Example;asc;{top}) {username} : {value};10;1;main]",
+            "version": "v6"
+        },
+        {
+            "function": "$wait",
+            "usage": "$wait[time]",
+            "description": "will delay functions from executing for a given time.",
+            "example": "$description[Hello!]\n$wait[5s]\n$sendMessage[Oh, what's that?]",
+            "version": "v6"
+        },
+        {
+            "function": "$writeFile",
+            "usage": "$writeFile[path;text;encoding?]",
+            "description": "will create a new file in the bot's directory.",
+            "example": "$writeFile[./testing.txt;Hello!;utf8]",
+            "version": "v6"
+        },
+        {
+            "function": "$year",
+            "usage": "$year",
+            "description": "will return the current year in CST.",
+            "example": "$year\n$timezone[America/New_York]",
+            "version": "v6"
+        }
+    ],
+    "util": [
+        {
+            "function": "$abbreviate",
+            "usage": "$abbreviate[num;dec?]",
+            "description": "will allow you to abbreviate large numbers.",
+            "example": "$abbreviate[20000] or $abbreviate[20000;1]",
+            "version": "v6"
+        },
+        {
+            "function": "$advanceCooldown",
+            "usage": "$advanceCooldown[time;id;errorMessage?]",
+            "description": "will set a cooldown for a given ID.",
+            "example": "$advanceCooldown[2m;$guildID;]",
+            "version": "v6"
+        },
+        {
+            "function": "$argsCheck",
+            "usage": "$argsCheck[condition;errorMessage?]",
+            "description": "will check the arguments of user typed and the required one, if requirements didn't meet, it will return an error message.",
+            "example": "  You have more than two arguments, nice!\n$argsCheck[>2;You have less than two arguments!]",
+            "version": "v6"
+        },
+        {
+            "function": "$argsSlice",
+            "usage": "$argsSlice[text;from?;to] ",
+            "description": "will slice the given argument depending on the users input.",
+            "example": "$argsSlice[Hello Bye;1;5]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelCooldown",
+            "usage": "$channelCooldown[time;errorMessage?]",
+            "description": "will set a channel-based cooldown.",
+            "example": "hello\n$channelCooldown[2m;Please wait %time% to execute this command again.]",
+            "version": "v6"
+        },
+        {
+            "function": "$channelExists",
+            "usage": "$channelExists[channel]",
+            "description": "will check if the given channel exists.",
+            "example": "$channelExists[general]",
+            "version": "v6"
+        },
+        {
+            "function": "$charCount",
+            "usage": "$charCount[text]",
+            "description": "will count the given characters in a text and return the amount of characters.",
+            "example": "$charCount[aoi.js is one of the simplest and easiest ways to create your own Discord Bot]",
+            "version": "v6"
+        },
+        {
+            "function": "$checkCondition",
+            "usage": "$checkCondition[condition]",
+            "description": "checks if a condition is either true or false.",
+            "example": "$checkCondition[50>25] or $checkCondition[50>25||true==false] or $checkCondition[50>25&&120<280]",
+            "version": "v6"
+        },
+        {
+            "function": "$checkContains",
+            "usage": "$checkContains[text;...chars]",
+            "description": "will check if the given arguments are present within the text.",
+            "example": "$checkContains[aoi.js is easy and simple to use for beginners;easy;simple]",
+            "version": "v6"
+        },
+        {
+            "function": "$concatTextSplit",
+            "usage": "$concatTextSplit[...text]",
+            "description": "will concatenates the text with the given separator.",
+            "example": "$concatTextSplit[Hello;Bye]\n$textSplit[Goodmorning, Goodnight;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$cooldown",
+            "usage": "$cooldown[time;errorMessage?]",
+            "description": "will set a user-based cooldown.",
+            "example": "hello\n$cooldown[2m;Please wait %time% to execute this command again.]",
+            "version": "v6"
+        },
+        {
+            "function": "$creationDate",
+            "usage": "$creationDate[id;format?]",
+            "description": "will return the creation date of the given Discord User.",
+            "example": "Your account was created: $creationDate[$authorID;date]",
+            "version": "v6"
+        },
+        {
+            "function": "$cropText",
+            "usage": "$cropText[text;limit;start?]",
+            "description": "is used to crop given text.",
+            "example": "$cropText[hello and bye;20;9]",
+            "version": "v6"
+        },
+        {
+            "function": "$digitalFormat",
+            "usage": "$digitalFormat[ms]",
+            "description": "will convert ms to digital formatted, readable time.",
+            "example": "$digitalFormat[240000]",
+            "version": "v6"
+        },
+        {
+            "function": "$disableMentionType",
+            "usage": "$disableMentionType[type]",
+            "description": "will disable a specific mention type.",
+            "example": "<@$authorID>\n$disableMentionType[users/all]",
+            "version": "v6"
+        },
+        {
+            "function": "$divide",
+            "usage": "$divide[...numbers;...numbers]",
+            "description": "will divide two given numbers.",
+            "example": "$divide[69;3",
+            "version": "v6"
+        },
+        {
+            "function": "$emojiExists",
+            "usage": "$emojiExists[emoji]",
+            "description": "will check if the given emoji exists.",
+            "example": "$emojiExists[<:LerefMoney:1003365344724910191>]",
+            "version": "v6"
+        },
+        {
+            "function": "$emojisFromMessage",
+            "usage": "$emojisFromMessage",
+            "description": "returns all emojis in a given message.",
+            "example": "$emojisFromMessage",
+            "version": "v6"
+        },
+        {
+            "function": "$expandNumber",
+            "usage": "$expandNumber[abbrNumber]",
+            "description": "will expand the given number.",
+            "example": "$expandNumber[1.3m]",
+            "version": "v6"
+        },
+        {
+            "function": "$fetch",
+            "usage": "$fetch[method;query;...query]",
+            "description": "will fetch information about a given method using Discord's API.",
+            "example": "$fetch[message;$messageID]",
+            "version": "v6"
+        },
+        {
+            "function": "$filterMessage",
+            "usage": "$filterMessage[text;...letters]",
+            "description": "will filter certain characters out of given text.",
+            "example": "$filterMessage[Never;N]",
+            "version": "v6"
+        },
+        {
+            "function": "$findChannel",
+            "usage": "$findChannel[channel;returnSelf?]",
+            "description": "will search a given channel by its name.",
+            "example": "$findChannel[⊂・⊃﹐aoi_v5;false]",
+            "version": "v6"
+        },
+        {
+            "function": "$findGuildChannel",
+            "usage": "$findGuildChannel[channelResolver;returnSelf?;guildID?]",
+            "description": "will search a guild channel within a guild.",
+            "example": "$findGuildChannel[rules;false;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$findMember",
+            "usage": "$findMember[user;returnSelf?;guildID?]",
+            "description": "will find a specific member in a specific guild.",
+            "example": "$findMember[Leref;true;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$findMembers",
+            "usage": "$findMembers[query;limit?;type?;force?;res?]",
+            "description": "will return all members with similar username.",
+            "example": "$findMembers[Leref;20;startsWith;true;{position}) {username}#{tag}]",
+            "version": "v6"
+        },
+        {
+            "function": "$findNumbers",
+            "usage": "$findNumbers[text]",
+            "description": "will attempt to return all numbers in a message of a given text.",
+            "example": "$findNumbers[Hello, I'm 25 years old]",
+            "version": "v6"
+        },
+        {
+            "function": "$findRole",
+            "usage": "$findRole[roleResolver;guildID?]",
+            "description": "will search and return a given role of a certain guild.",
+            "example": "$findRole[Owner;773352845738115102]",
+            "version": "v6"
+        },
+        {
+            "function": "$findRoles",
+            "usage": "$findRoles[query;limit?;type?;res?]",
+            "description": "will return all matching roles depending on the given query.",
+            "example": "$findRoles[Owner;5;startsWith;{position}) {username}: {id}]",
+            "version": "v6"
+        },
+        {
+            "function": "$findSpecialChars",
+            "usage": "$findSpecialChars[text]",
+            "description": "will return all special characters of the given argument.",
+            "example": "$findSpecialChars[Aoi.js is ###### great]",
+            "version": "v6"
+        },
+        {
+            "function": "$findUser",
+            "usage": "$findUser[userResolver;returnSelf?]",
+            "description": "will attempt to find a user which is matching with the given query.",
+            "example": "$findUser[Ferel;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$formatDate",
+            "usage": "$formatDate[date;format?]",
+            "description": "will format a given date.",
+            "example": "$formatDate[$dateStamp;dddd, DD MMMM YYYY]",
+            "version": "v6"
+        },
+        {
+            "function": "$get",
+            "usage": "$get[var]",
+            "description": "will retrieve temporary variables stored by $let.",
+            "example": "Aoi.js developer: $get[developer]\n$let[developer;Leref]",
+            "version": "v6"
+        },
+        {
+            "function": "$getTextSplitLength",
+            "usage": "$getTextSplitLength",
+            "description": "will return the amount of split arguments in $textSplit.",
+            "example": "$getTextSplitLength\n$textSplit[Hello, my, name, is, Leref;, ]",
+            "version": "v6"
+        },
+        {
+            "function": "$globalCooldown",
+            "usage": "$globalCooldown[time;errorMessage?]",
+            "description": "will set a global-based cooldown for a command.",
+            "example": "Hello\n$globalCooldown[5m;Please wait %time% to execute this command again.]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildChannelExists",
+            "usage": "$guildChannelExists[channel;guildID?]",
+            "description": "will check if the given guild channel exists.",
+            "example": "$guildChannelExists[rules]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildCooldown",
+            "usage": "$guildCooldown[time;errorMessage?]",
+            "description": "will set a guild-based cooldown.",
+            "example": "hello\n$guildCooldown[2m;Please wait %time% to execute this command again.]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildEmojiExists",
+            "usage": "$guildEmojiExists[emoji;guildId?]",
+            "description": "will check if the given emoji exists in the given guild.",
+            "example": "$guildEmojiExists[<:LerefMoney:1003365344724910191>;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$guildExists",
+            "usage": "$guildExists[guildId]",
+            "description": "will check if the given guild exists.",
+            "example": "$guildExists[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$hasAnyPerm",
+            "usage": "$hasAnyPerm[guildID;userID;...perms]",
+            "description": "will check if the user has one of the required permissions.",
+            "example": "$hasAnyPerm[$guildID;$authorID;kick;managemessages]",
+            "version": "v6"
+        },
+        {
+            "function": "$hasAnyRole",
+            "usage": "$hasAnyRole[guildID;userID;...roles]",
+            "description": "will check if the provided user has any of the roles listed in the roles argument.",
+            "example": "$hasAnyRole[$guildID;$authorID;$findRole[Owner];$findRole[Admin]]",
+            "version": "v6"
+        },
+        {
+            "function": "$hasEmbeds",
+            "usage": "$hasEmbeds[messageID;channelID]",
+            "description": "will check if there are embeds attached to the message.",
+            "example": "$hasEmbeds[$messageID;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$hasPerms",
+            "usage": "$hasPerms[guildID;userID;...perms]",
+            "description": "will check if the user has the required permission.",
+            "example": "$hasPerms[$guildID;$authorID;kick]",
+            "version": "v6"
+        },
+        {
+            "function": "$hasPermsInChannel",
+            "usage": "$hasPermsInChannel[channelID;userorroleID;...perms]",
+            "description": "will check if the user has one of the required permission in the given channel.",
+            "example": "$hasPermsInChannel[$channelID;$authorID;sendmessages]",
+            "version": "v6"
+        },
+        {
+            "function": "$hasRoles",
+            "usage": "$hasRoles[guildID;userID;...roles]",
+            "description": "check if the provided user has the roles listed in the roles argument.",
+            "example": "$hasRoles[$guildID;$authorID;$findRole[Owner]]",
+            "version": "v6"
+        },
+        {
+            "function": "$indexOf",
+            "usage": "$indexOf[string;char]",
+            "description": "will return the index of the given character.",
+            "example": "$indexOf[Hello, what is wrong with you?;w]",
+            "version": "v6"
+        },
+        {
+            "function": "$indexOfArg",
+            "usage": "$indexOfArg[string;query]",
+            "description": "will return the index of the given query.",
+            "example": "indexOfArgs[aoi.js is great for users who are new to Discord's API!;great]",
+            "version": "v6"
+        },
+        {
+            "function": "$isBanned",
+            "usage": "$isBanned[guildID;userID]",
+            "description": "checks if a given user is banned in a specific guild.",
+            "example": "$isBanned[$guildID;$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isBoosting",
+            "usage": "$isBoosting[userID?;guildID?]",
+            "description": "will check if the given user is boosting the given guild.",
+            "example": "$isBoosting[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isBot",
+            "usage": "$isBot[userID?]",
+            "description": "will check if the given user is a bot.",
+            "example": "$isBot[$clientID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isChannelManageable",
+            "usage": "$isChannelManageable[channelID?]",
+            "description": "will check if the channel is manageable or not.",
+            "example": "$isChannelManageable[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isCustomEmoji",
+            "usage": "$isCustomEmoji[emoji;guildID?]",
+            "description": "will check if the given emoji is a custom emoji or not.",
+            "example": "$isCustomEmoji[<:LerefMoney:1003365344724910191>;773352845738115102]",
+            "version": "v6"
+        },
+        {
+            "function": "$isDM",
+            "usage": "$isDM[channelID?]",
+            "description": "will check if the given channel is a DM or not.",
+            "example": "$isDM[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isDeafen",
+            "usage": "$isDeafen[userID?;guildID?]",
+            "description": "will check if a certain user is deafened or not.",
+            "example": "$isDeafen[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isEveryoneMentioned",
+            "usage": "$isEveryoneMentioned",
+            "description": "will check if everyone or here is mentioned.",
+            "example": "You did not mention @ everyone!\n$onlyIf[$isEveryoneMentioned==false;You tried to mention @ everyone!]",
+            "version": "v6"
+        },
+        {
+            "function": "$isGuildDeafened",
+            "usage": "$isGuildDeafened[userid?;guildid?]",
+            "description": "is similar but not to confuse with $isDeafen, this will check if the user is server deafened.",
+            "example": "$isGuildDeafened",
+            "version": "v6"
+        },
+        {
+            "function": "$isGuildMuted",
+            "usage": "$isGuildMuted[userid?;guildid?]",
+            "description": "is similar but not to confuse with $isMuted, this will check if the user is server muted.",
+            "example": "$isGuildMuted[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isHoisted",
+            "usage": "$isHoisted[roleID;guildID?]",
+            "description": "will check if a specific role is hoisted.",
+            "example": "$isHoisted[$findRole[Owner];$guildI",
+            "version": "v6"
+        },
+        {
+            "function": "$isInteger",
+            "usage": "$isInteger[number]",
+            "description": "will check if the given number is an integer or not.",
+            "example": "$isInteger[$message]",
+            "version": "v6"
+        },
+        {
+            "function": "$isMentionable",
+            "usage": "$isMentionable[roleID;guildID?]",
+            "description": "check if a given role is mentionable.",
+            "example": "$isMentionable[$findRole[Owner];$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isMentioned",
+            "usage": "$isMentioned[query]",
+            "description": "checks if the query contains a mention.",
+            "example": "$isMentioned[<@$authorID>]",
+            "version": "v6"
+        },
+        {
+            "function": "$isMuted",
+            "usage": "$isMuted[userID?;guildID?]",
+            "description": "will check if a specific user is muted within a voice channel.",
+            "example": "$isMuted[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isNumber",
+            "usage": "$isNumber[num]",
+            "description": "will check if the given argument is a number.",
+            "example": "$isNumber[255]",
+            "version": "v6"
+        },
+        {
+            "function": "$isPartnered",
+            "usage": "$isPartnered[guildID?]",
+            "description": "checks if the given guild is partnered with Discord.",
+            "example": "$isPartnered[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isRoleEditable",
+            "usage": "$isRoleEditable[roleid;guildid?]",
+            "description": "will check if the role is editable.",
+            "example": "$isRoleEditable[$findRole[Owner];$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isRoleManaged",
+            "usage": "$isRoleManaged[roleID;guildID?]",
+            "description": "will check if a certain role is managed by Discord.",
+            "example": "$isRoleManaged[$findRole[Server Booster];$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isSelfDeafened",
+            "usage": "$isSelfDeafened[userid?;guildid?]",
+            "description": "is similar but not to confuse with $isDeafen, this will check if the user deafened themselves.",
+            "example": "$isSelfDeafened",
+            "version": "v6"
+        },
+        {
+            "function": "$isSelfMuted",
+            "usage": "$isSelfMuted[userid?;guildid?]",
+            "description": "is similar but not to confuse with $isMuted, this will check if the user muted themselves.",
+            "example": "$isSelfDeafened",
+            "version": "v6"
+        },
+        {
+            "function": "$isStreaming",
+            "usage": "$isStreaming[userid?;guildid?]",
+            "description": "will check if one user is streaming in a voice channel.",
+            "example": "$isStreaming[$authorID;$guildid]",
+            "version": "v6"
+        },
+        {
+            "function": "$isThread",
+            "usage": "$isThread[channelID?]",
+            "description": "will check if the given channel is a thread or not.",
+            "example": "$isThread[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isTimeout",
+            "usage": "$isTimeout[guildid?;userid?]",
+            "description": "will check if the user is timeouted with Discord's built-in timeout feature.",
+            "example": "$isTimeout[$guildID;$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isUnicodeEmoji",
+            "usage": "$isUnicodeEmoji[emoji]",
+            "description": "will check if the given emoji is an unicode emoji.",
+            "example": "$isUnicodeEmoji[🤓]",
+            "version": "v6"
+        },
+        {
+            "function": "$isUserDmEnabled",
+            "usage": "$isUserDmEnabled[userid]",
+            "description": "will check if the user's Direct Messages are either disabled or enabled.",
+            "example": "$isUserDmEnabled[$authorID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isValidHex",
+            "usage": "$isValidHex[color/int]",
+            "description": "will check if the given hex / decimal color is valid.",
+            "example": "$isValidHex[#30dbd8]",
+            "version": "v6"
+        },
+        {
+            "function": "$isValidImageLink",
+            "usage": "$isValidImageLink[url]",
+            "description": "will check if the given image link is valid.",
+            "example": "$isValidImageLink[https://cdn.discordapp.com/attachments/832704676096245800/1058914808109486221/Screenshot_2022-12-31_at_8.08.57_PM.png]",
+            "version": "v6"
+        },
+        {
+            "function": "$isValidInvite",
+            "usage": "$isValidInvite[url]",
+            "description": "will check if the given invite is valid.",
+            "example": "$isValidInvite[https://discord.gg/aoi-js-server-akarui-development-team-773352845738115102]",
+            "version": "v6"
+        },
+        {
+            "function": "$isValidLink",
+            "usage": "$isValidLink[url]",
+            "description": "will check if the given link is valid.",
+            "example": "$isValidLink[https://aoi.js.org/docs/]",
+            "version": "v6"
+        },
+        {
+            "function": "$isValidObject",
+            "usage": "$isValidObject[json]",
+            "description": "checks if the given json is a valid object.",
+            "example": "$isValidObject[{\"name\":\"Leref\", \"aoijs\":\"nice\"}]",
+            "version": "v6"
+        },
+        {
+            "function": "$isVerified",
+            "usage": "$isVerified[guildID?]",
+            "description": "checks if the given guild is verified by Discord.",
+            "example": "$isVerified[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isVideoOn",
+            "usage": "$isVideoOn[userid?;guildid?]",
+            "description": "checks if the given user has their video on in a voice channel.",
+            "example": "$isVideoOn[$authorID;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$isVoice",
+            "usage": "$isVoice[channelID]",
+            "description": "will check if the given channel is a voice channel or not.",
+            "example": "$isVoice[$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$let",
+            "usage": "$let[varname;value]",
+            "description": "will store temporary variables which can be retrieved by $get.",
+            "example": "$get[genius]\n$let[genius;Ayaka]",
+            "version": "v6"
+        },
+        {
+            "function": "$math",
+            "usage": "$math[calculation]",
+            "description": "will return a calculated result of the given argument.",
+            "example": "$math[15+5/2*26+(5+120)]",
+            "version": "v6"
+        },
+        {
+            "function": "$memberExists",
+            "usage": "$memberExists[userid;guildid?]",
+            "description": "check if a given user is member of the given guild",
+            "example": "$memberExists[$authorid;$guildid]",
+            "version": "v6"
+        },
+        {
+            "function": "$mentionType",
+            "usage": "$mentionType[mention]",
+            "description": "will return the type of the mention.",
+            "example": "$mentionType[<@$authorID>]",
+            "version": "v6"
+        },
+        {
+            "function": "$mentioned",
+            "usage": "$mentioned[index;returnSelf?]",
+            "description": "will return the ID of an user of the mention.",
+            "example": "$mentioned[1;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$mentionedChannels",
+            "usage": "$mentionedChannels[index;returnSelf?]",
+            "description": "will return the ID of a channel retrieved from the mention.",
+            "example": "$mentionedChannels[1;true]",
+            "version": "v6"
+        },
+        {
+            "function": "$mentionedChannelsCount",
+            "usage": "$mentionedChannelsCount",
+            "description": "will return the amount of channel mentions within a message.",
+            "example": "$mentionedChannelsCount\n<#837531672341381190> <#869210515065426012> <#805852932938661900>",
+            "version": "v6"
+        },
+        {
+            "function": "$mentionedRoles",
+            "usage": "$mentionedRoles[index]",
+            "description": "will return the ID of a role retrieved from a message.",
+            "example": "$mentionedRoles[1]",
+            "version": "v6"
+        },
+        {
+            "function": "$mentionedRolesCount",
+            "usage": "$mentionedRolesCount",
+            "description": "will return the amount of role mentions within a message.",
+            "example": "You have: $mentionedRolesCount role mentions in your message!",
+            "version": "v6"
+        },
+        {
+            "function": "$mentionedUsersCount",
+            "usage": "$mentionedUsersCount",
+            "description": "will return the amount of user mentions within a message.",
+            "example": "Amount of user mentions: $mentionedUsersCount",
+            "version": "v6"
+        },
+        {
+            "function": "$messageExists",
+            "usage": "$messageExists[messageid;channelid?]",
+            "description": "will check if a specific message exists",
+            "example": "$messageExists[1058998634823299143;$channelID]",
+            "version": "v6"
+        },
+        {
+            "function": "$messageSlice",
+            "usage": "$messageSlice[from;to?]",
+            "description": "will slice a message.",
+            "example": "$messageSlide[1;5]",
+            "version": "v6"
+        },
+        {
+            "function": "$modulo",
+            "usage": "$modulo[...numbers;...numbers]",
+            "description": "operation / the remainder when dividing.",
+            "example": "$modulo[5;3]",
+            "version": "v6"
+        },
+        {
+            "function": "$multi",
+            "usage": "$multi[...numbers;...numbers]",
+            "description": "will multiplicate given numbers.",
+            "example": "$multi[8;9]",
+            "version": "v6"
+        },
+        {
+            "function": "$nonEscape",
+            "usage": "$nonEscape[message]",
+            "description": "will stop escaping special characters.",
+            "example": "$nonEscape[Hello [;)]]",
+            "version": "v6"
+        },
+        {
+            "function": "$numberSeperator",
+            "usage": "$numberSeperator[num;sep?]",
+            "description": "will seperate numbers and make them readable.",
+            "example": "$numberSeperator[1000000;,]",
+            "version": "v6"
+        },
+        {
+            "function": "$ordinal",
+            "usage": "$ordinal[number]",
+            "description": "adds st, nd, rd, th to a number such as 1st, 2nd, 3rd, 4th.",
+            "example": "$ordinal[12] // Returns 12nd\n$ordinal[50] // Returns 50th",
+            "version": "v6"
+        },
+        {
+            "function": "$parseDate",
+            "usage": "$parseDate[ms;type?]",
+            "description": "$parseDate will return the date/time for the given milliseconds",
+            "example": "$parseDate[$dateStamp;date]",
+            "version": "v6"
+        },
+        {
+            "function": "$parseTime",
+            "usage": "$parseTime[time]",
+            "description": "will convert any human time to milliseconds.",
+            "example": "$parseTime[1w 2d 20m] or $parseTime[69m]",
+            "version": "v6"
+        },
+        {
+            "function": "$partial",
+            "usage": "$partial",
+            "description": "checks if the object structure is partial.",
+            "example": "$partial",
+            "version": "v6"
+        },
+        {
+            "function": "$random",
+            "usage": "$random[num1;num2;allow?;random?]",
+            "description": "will generate a random number between your chosen span.",
+            "example": "$random[20;250]",
+            "version": "v6"
+        },
+        {
+            "function": "$randomGuildID",
+            "usage": "$randomChannelID[guildID/global?;type?]",
+            "description": "will return a random channel ID of all guilds or of a specific guild.",
+            "example": "<#$randomChannelID[$guildID;all]>",
+            "version": "v6"
+        },
+        {
+            "function": "$randomEmoji",
+            "usage": "$randomEmoji",
+            "description": "will return a random emoji ID.",
+            "example": "$randomEmoji",
+            "version": "v6"
+        },
+        {
+            "function": "$randomGuildID",
+            "usage": "$randomChannelID[guildID/global?;type?]",
+            "description": "will return a random channel ID of all guilds or of a specific guild.",
+            "example": "<#$randomChannelID[$guildID;all]>",
+            "version": "v6"
+        },
+        {
+            "function": "$randomRoleID",
+            "usage": "$randomRoleID[guildID?]",
+            "description": "will return a random role ID of a given guild.",
+            "example": "$randomRoleID[$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$randomString",
+            "usage": "$randomString[range;diffExec?]",
+            "description": "will generate a random string.",
+            "example": "$randomString[20]",
+            "version": "v6"
+        },
+        {
+            "function": "$randomText",
+            "usage": "$randomText[text;text;...]",
+            "description": "will return a random word out of the given query",
+            "example": "$randomText[Hello;Bye;Goodnight;See you]",
+            "version": "v6"
+        },
+        {
+            "function": "$randomUserID",
+            "usage": "$randomUserID[global/guildID?]",
+            "description": "will return a random username.",
+            "example": "$randomUserID[global]",
+            "version": "v6"
+        },
+        {
+            "function": "$repeatMessage",
+            "usage": "$repeatMessage[time;text]",
+            "description": "will repeat the given text for given amount of times.",
+            "example": "$repeatMessage[20;Hello ]",
+            "version": "v6"
+        },
+        {
+            "function": "$replaceText",
+            "usage": "$replaceText[text;replacer;replaceTo;times?]",
+            "description": "will replace specific segments of text.",
+            "example": "$replaceText[Monkey;M;D]",
+            "version": "v6"
+        },
+        {
+            "function": "$replaceTextWithRegex",
+            "usage": "$replaceTextWithRegex[text;reg;flags;newT]",
+            "description": "will replace specific segments of text.",
+            "example": "$replaceTextWithRegex[This function is more complicated than it looks.;more;g;less]",
+            "version": "v6"
+        },
+        {
+            "function": "$resolveColor",
+            "usage": "$resolveColor[type;returnAs?;...datas]",
+            "description": "will convert a given color to a given type.",
+            "example": "$resolveColor[decimal;rgb;#32a852]",
+            "version": "v6"
+        },
+        {
+            "function": "$resolveEmojiID",
+            "usage": "$resolveEmojiID[emoji]",
+            "description": "will resolve a certain emoji.",
+            "example": "$resolveEmojiID[LerefMoney]",
+            "version": "v6"
+        },
+        {
+            "function": "$reverse",
+            "usage": "$reverse[text]",
+            "description": "will reverse given text.",
+            "example": "$reverse[!snoitalutargnoc neht ,siht daer ot elba er'uoy fi ,desrever si txet sihT]",
+            "version": "v6"
+        },
+        {
+            "function": "$roleExists",
+            "usage": "$roleExists[roleId;guildId?]",
+            "description": "will check if a certain role exists within a certain guild.",
+            "example": "$roleExists[900004369355931729;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$roleIconURL",
+            "usage": "$roleIconURL[guildId?;roleId]",
+            "description": "will retrieve the imagine URL of the role icon.",
+            "example": "$roleIconURL[$guildID;900004369355931729]",
+            "version": "v6"
+        },
+        {
+            "function": "$roleId",
+            "usage": "$roleId[roleResolver;guildID?]",
+            "description": "will return the ID of a role.",
+            "example": "$roleId[Owner;$guildID]",
+            "version": "v6"
+        },
+        {
+            "function": "$round",
+            "usage": "$round[number]",
+            "description": "will round to the next whole number.",
+            "example": "$round[555.78]",
+            "version": "v6"
+        },
+        {
+            "function": "$roundTenth",
+            "usage": "$roundTenth[number;decimalPosition]",
+            "description": "will round to the next tenth.",
+            "example": "$roundTenth[503.6972]",
+            "version": "v6"
+        },
+        {
+            "function": "$spliceTextJoin",
+            "usage": "$spliceTextJoin[text;splitter;sep1?;sep2?]",
+            "description": "",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$splitText",
+            "usage": "$splitText[index]",
+            "description": "will return a value of $textSplit depending on the given index.",
+            "example": "$splitText[2]\ntextSplit[aoi.db//aoi.js;//]",
+            "version": "v6"
+        },
+        {
+            "function": "$stringEndsWith",
+            "usage": "$stringEndsWith[text;check]",
+            "description": "will check if the given argument ends with something specific",
+            "example": "$stringEndsWith[aoi.js;js]",
+            "version": "v6"
+        },
+        {
+            "function": "$stringStartsWith",
+            "usage": "$stringStartsWith[text;check]",
+            "description": "will check if the given argument starts with something specific.",
+            "example": "$stringStartsWith[aoi.js;aoi]",
+            "version": "v6"
+        },
+        {
+            "function": "$sub",
+            "usage": "$sub[num1;num2]",
+            "description": "will substract two given numbers.",
+            "example": "$sub[70;5]",
+            "version": "v6"
+        },
+        {
+            "function": "$sum",
+            "usage": "$sum[num1;num2]",
+            "description": "will sum-up two given numbers.",
+            "example": "$sum[70;5]",
+            "version": "v6"
+        },
+        {
+            "function": "$tempCooldown",
+            "usage": "$tempCooldown[time;id;errorMessage?]",
+            "description": "will create a temporary cooldown for a command.",
+            "example": "hello\n$tempCooldown[2m;customid;Please wait %time% to execute this command again.]",
+            "version": "v6"
+        },
+        {
+            "function": "$textSlice",
+            "usage": "$textSlice[text;from?;to]",
+            "description": "will slice a message depending on the given arguments.",
+            "example": "$textSlice[Hello Bye;0;5]",
+            "version": "v6"
+        },
+        {
+            "function": "$textSplit",
+            "usage": "$textSplit[text;sep?]",
+            "description": "$splitText[1] $splitText[3] $splitText[6] $splitText[7]\n$textSplit[hello,__blurr__how__ayaka__leref__are__you;__]",
+            "example": "",
+            "version": "v6"
+        },
+        {
+            "function": "$textSplitMap",
+            "usage": "$textSplit[awaited]",
+            "description": "will create a loop over all values that are stored within $textSplit.",
+            "example": "https://aoi.js.org/docs/functions/Util/textSplitMap",
+            "version": "v6"
+        },
+        {
+            "function": "$textTrim",
+            "usage": "$textTrim[text]",
+            "description": "will remove all extra spaces, multiple spaces after one space, and replaces those with one single space.",
+            "example": "$textTrim[Imagine          a          string package    .]",
+            "version": "v6"
+        },
+        {
+            "function": "$toLocaleUpperCase",
+            "usage": "$toLocaleUpperCase[text]",
+            "description": "will change the first character of every word to uppercase.",
+            "example": "$toLocaleUpperCase[hello, i'm happy.]",
+            "version": "v6"
+        },
+        {
+            "function": "$toLowerCase",
+            "usage": "$toLowerCase[text]",
+            "description": "will change the given text from uppercase to lowercase.",
+            "example": "$toLowerCase[AOI.JS IS GREAT.]",
+            "version": "v6"
+        },
+        {
+            "function": "$toUpperCase",
+            "usage": "$toUpperCase[text]",
+            "description": "will change the given text from lowercase to uppercase.",
+            "example": "$toUpperCase[this is an example]",
+            "version": "v6"
+        },
+        {
+            "function": "$truncate",
+            "usage": "$truncate[number]",
+            "description": "will remove all values after a decimal point.",
+            "example": "$truncate[775.9723]",
+            "version": "v6"
+        }
+    ]
+}
